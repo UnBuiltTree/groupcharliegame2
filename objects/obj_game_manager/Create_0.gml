@@ -22,10 +22,18 @@ game_width = 320
 tick_time = 100/12; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
 
+//variables used for the score font used in the hud
+time_font = fnt_main_12;
+time_colour = c_black;
+time_alpha = 1;
+time_halign = fa_center;
+time_valign = fa_middle;
+
 //switch to hold any values that change for mission levels  ~Weston_1
 switch (global.mission_level){
 	case 0:
 		//varables go here
+		time_left = 12*100
 		break;
 	default:
 		//varables go here
@@ -49,7 +57,9 @@ instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center,"Clouds_2", obj_clouds_2);
 instance_create_layer(x_center, y_center,"Ground", obj_ground);
 
-
+end_of_round = function(){
+	curr_game_state = GAME_STATE.ENDED;
+}
 
 //code to play music from when we have some ~Weston_1
 /*
