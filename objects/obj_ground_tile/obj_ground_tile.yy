@@ -30,9 +30,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite8",
-    "path": "sprites/Sprite8/Sprite8.yy",
+    "name": "spr_ground_tile",
+    "path": "sprites/spr_ground_tile/spr_ground_tile.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

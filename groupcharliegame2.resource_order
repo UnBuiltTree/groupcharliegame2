@@ -23,7 +23,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"Sprite8","order":4,"path":"sprites/Sprite8/Sprite8.yy",},
+    {"name":"spr_ground_tile","order":7,"path":"sprites/spr_ground_tile/spr_ground_tile.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_clouds_placeholder1","order":4,"path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},
     {"name":"rm_interim_menu","order":2,"path":"rooms/rm_interim_menu/rm_interim_menu.yy",},
