@@ -54,7 +54,7 @@ _player.player_local_id = 0;
 show_debug_message("Player Spawned: " + string(_player.player_local_id));
 
 instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
-instance_create_layer(x_center, y_center,"Clouds_2", obj_clouds_2);
+instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);
 instance_create_layer(x_center, y_center,"Ground", obj_ground);
 
 gun_cooldown = function(){
