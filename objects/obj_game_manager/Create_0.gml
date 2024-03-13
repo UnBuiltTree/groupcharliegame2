@@ -33,7 +33,7 @@ time_valign = fa_middle;
 switch (global.mission_level){
 	case 0:
 		//varables go here
-		time_left = 12*100
+		time_left = 12*400
 		break;
 	default:
 		//varables go here
