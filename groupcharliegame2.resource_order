@@ -23,7 +23,6 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"spr_ground_tile","order":7,"path":"sprites/spr_ground_tile/spr_ground_tile.yy",},
     {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_clouds_placeholder1","order":4,"path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},
     {"name":"rm_interim_menu","order":2,"path":"rooms/rm_interim_menu/rm_interim_menu.yy",},
@@ -35,7 +34,6 @@
     {"name":"rm_game_room","order":1,"path":"rooms/rm_game_room/rm_game_room.yy",},
     {"name":"spr_ground_placeholder","order":6,"path":"sprites/spr_ground_placeholder/spr_ground_placeholder.yy",},
     {"name":"spr_clouds_placeholder2","order":5,"path":"sprites/spr_clouds_placeholder2/spr_clouds_placeholder2.yy",},
-    {"name":"obj_ground_tile","order":3,"path":"objects/obj_ground_tile/obj_ground_tile.yy",},
     {"name":"spr_hud_background","order":2,"path":"sprites/spr_hud_background/spr_hud_background.yy",},
     {"name":"obj_ground","order":2,"path":"objects/obj_ground/obj_ground.yy",},
   ],
