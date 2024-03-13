@@ -18,6 +18,7 @@ enum GAME_STATE
 game_height = 640
 game_width = 320
 
+
 tick_time = 100/12; //time in milliseconds for each game tick
 last_tick = current_time; //stores the current time
 
@@ -56,18 +57,6 @@ instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center,"Clouds_2", obj_clouds_2);
 instance_create_layer(x_center, y_center,"Ground", obj_ground);
 instance_create_layer(x_center, y_center,"Ground_Instances", obj_ground_tile);
-
-gun_cooldown = function(){
-	if (global.gun_one_cooldown > 0){
-		global.gun_one_cooldown--
-	}
-	if (global.gun_two_cooldown > 0){
-		global.gun_two_cooldown--
-	}
-	if (global.gun_three_cooldown > 0){
-		global.gun_three_cooldown--
-	}
-}
 
 end_of_round = function(){
 	curr_game_state = GAME_STATE.ENDED;
