@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_clouds_placeholder1",
-  "bbox_bottom": 2528,
+  "bbox_bottom": 2568,
   "bbox_left": 0,
   "bbox_right": 319,
-  "bbox_top": 0,
+  "bbox_top": 40,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7d6001cb-4132-4dfb-8a1e-054ebab644b4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"17ff7fbb-39ab-4630-8e6b-21ada5060c11",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 2569,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"eebdb85d-0a84-4b59-aac8-2e389dbe9caa","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"32a71ee2-b1ea-4707-8175-18185561a5fa","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 6,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d6001cb-4132-4dfb-8a1e-054ebab644b4","path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},},},"Disabled":false,"id":"74a55e78-a310-43e8-9306-ef273f3019d6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"17ff7fbb-39ab-4630-8e6b-21ada5060c11","path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},},},"Disabled":false,"id":"d6b24acb-8e0e-42f2-85e2-efb318f78695","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
