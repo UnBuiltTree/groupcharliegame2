@@ -26,7 +26,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 			//checks for S or down key presses
 			if (keyboard_check(ord("S")) || keyboard_check(vk_down)){
 				if (current_y+(player_size/2) < (room_height/2)+(game_height/2)){
-					vspeed += move_speed;
+					vspeed += pullback_speed;
 				}
 			}
 			

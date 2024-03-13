@@ -20,7 +20,6 @@ game_width = 320
 
 
 tick_time = 100/12; // Time in milliseconds for each game tick
-tick = 0;
 last_tick = current_time; // Store the current time
 
 
