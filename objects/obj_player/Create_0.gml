@@ -20,6 +20,14 @@ player_initialize = function(){
 	
 	player_size = 32;
 	
+	gun_one_fire_rate = 3;
+	gun_two_fire_rate = 12;
+	gun_three_fire_rate = 24;
+	
+	global.gun_one_cooldown = 0;
+	global.gun_two_cooldown = 0;
+	global.gun_three_cooldown = 0;
+	
 	//variables for player speeds
 	hspeed = 0;
 	vspeed = 0;
@@ -27,3 +35,58 @@ player_initialize = function(){
 }
 
 player_initialize();
+
+create_projectile = function(_projectile_type)
+{
+	// Offsets for players gun position
+	
+	_projectile_offset = 0;
+	
+	// Sets new postions from adjusted positions and players position
+	var _projectile_pos_x = x
+	var _projectile_pos_y = y - player_size/2
+
+	// Creates new player projectile from the new positions
+	var _new_projectile = instance_create_layer(_projectile_pos_x, _projectile_pos_y, "Projectiles", obj_projectile);
+	_new_projectile.owner = self;	
+	_new_projectile.correct_player(_projectile_type);
+	
+	// Plays firing audio sound
+	//var _sound_spark = audio_play_sound(snd_player_fire, 100, false, 0.3, 0, 1.0);
+}
+
+trigger_pressed = function(_trigger_type)
+{
+	switch (_trigger_type) {
+	    case 0:
+			show_debug_message("gun1 :" + string(global.gun_one_cooldown))
+	        if (global.gun_one_cooldown <= 0)
+			{
+				// Resets the fire cooldown, uses special burt mode for auto cannon
+				global.gun_one_cooldown = gun_one_fire_rate;
+				// Creates a projectile
+				create_projectile(0);
+			}
+	        break;
+		case 1:
+			show_debug_message("gun2 :" + string(global.gun_two_cooldown))
+	        if (global.gun_two_cooldown <= 0)
+			{
+				// Resets the fire cooldown, uses special burt mode for auto cannon
+				global.gun_two_cooldown = gun_two_fire_rate;
+				// Creates a projectile
+				create_projectile(1);
+			}
+	        break;
+		case 2:
+			show_debug_message("gun3 :" + string(global.gun_three_cooldown))
+	        if (global.gun_three_cooldown <= 0)
+			{
+				// Resets the fire cooldown, uses special burt mode for auto cannon
+				global.gun_three_cooldown = gun_three_fire_rate;
+				// Creates a projectile
+				create_projectile(2);
+			}
+	        break;
+	}
+}
