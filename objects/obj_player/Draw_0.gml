@@ -1,9 +1,14 @@
-// Calculate snapped positions
-var snapped_x = (round(x/1))*1;
-var snapped_y = (round(y/1))*1;
+if (hspeed > 0){
+	var _sprite_state = 1;
+} else if (hspeed < 0){
+	var _sprite_state = 2;
+} else {
+	var _sprite_state = 0;
+}
 
-// Draw the sprite at the snapped position
-draw_sprite(sprite_index, image_index, snapped_x, snapped_y);
+image_index = _sprite_state
+draw_sprite(sprite_index, image_index, x, y);
+
 
 
 

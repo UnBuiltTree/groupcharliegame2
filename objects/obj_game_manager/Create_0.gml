@@ -22,11 +22,6 @@ game_width = 320
 tick_time = 100/12; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
 
-
-clouds_1_layer_id = layer_get_id("Clouds_1");
-clouds_2_layer_id = layer_get_id("Clouds_2");
-
-
 //switch to hold any values that change for mission levels  ~Weston_1
 switch (global.mission_level){
 	case 0:
@@ -46,7 +41,7 @@ level_initialize = function(){
 level_initialize()
 
 //creates a player within the centre of the room and sets their ID to 0 ~Weston
-var _player = instance_create_layer(x_center, y_center,"Aerial_Instances", obj_player);
+var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_Instances", obj_player);
 _player.player_local_id = 0;
 show_debug_message("Player Spawned: " + string(_player.player_local_id));
 

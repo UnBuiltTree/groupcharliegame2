@@ -15,8 +15,8 @@ player_initialize = function(){
 	
 	
 	//variable for players move speed
-	move_speed = 4;
-	pullback_speed = 2;
+	horz_speed = 4;
+	vert_speed = 2;
 	
 	player_size = 32;
 	
