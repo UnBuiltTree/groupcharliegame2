@@ -7,6 +7,7 @@
 	*/
 global.mission_level = 0;
 global.player_lives = 5;
+
 // end global.varables ~Weston_1
 
 // varables to store the ceneter of the room ~Weston_1
@@ -14,25 +15,25 @@ x_center = room_width / 2
 y_center = room_height / 2
 
 
-// Set the base dimensions for your game
+// Set the base dimensions for the games window
 var base_width = 720;
 var base_height = 720;
 
-// Retrieve the display size
+// Retrieves the display size
 var display_width = display_get_width();
 var display_height = display_get_height();
 
-// Calculate the scale factor while maintaining the aspect ratio
+// Calculates the scale factor while maintaining the aspect ratio
 var scale_factor = min(display_width / base_width, display_height / base_height);
 
-// Calculate the new window size
+// Calculates the new window size
 var new_width = round(base_width * scale_factor);
 var new_height = round(base_height * scale_factor);
 
-// Set the new window size
+// Sets the new window size
 window_set_size(new_width, new_height);
 
-// Center the window on the screen
+// Centers the window on the screen
 window_center();
 
 // func to create the menu's buttons ~Weston_1
