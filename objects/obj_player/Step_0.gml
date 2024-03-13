@@ -35,22 +35,6 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 				}
 			}
 			//End keybaord movement controls ~Weston
-			//trigger controls
-			if (keyboard_check(vk_space) || mouse_check_button(mb_left))
-				{
-					var _trigger_type = 0;
-					trigger_pressed(_trigger_type);
-				}
-			if (keyboard_check(vk_shift) || mouse_check_button(mb_right))
-				{
-					var _trigger_type = 1;
-					trigger_pressed(_trigger_type);
-				}
-			if (keyboard_check(ord("E")))
-				{
-					var _trigger_type = 2;
-					trigger_pressed(_trigger_type);
-				}
 		}
 	}
 }
