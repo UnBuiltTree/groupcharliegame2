@@ -20,8 +20,8 @@ y_center = room_height / 2
 
 
 // Set the base dimensions for your game
-var base_width = 720;
-var base_height = 720;
+var base_width = 640;
+var base_height = 640;
 
 // Retrieve the display size
 var display_width = display_get_width();
