@@ -12,6 +12,8 @@ global.player_lives = 5;
 global.gun_one_cooldown = 0;
 global.gun_two_cooldown = 0;
 global.gun_three_cooldown = 0;
+
+global.run_tick = false;
 // end global.varables ~Weston_1
 
 // varables to store the ceneter of the room ~Weston_1
