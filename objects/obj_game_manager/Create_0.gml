@@ -1,5 +1,5 @@
 //Create Event
-
+global.main_menu = false;
 //Weston_1, 3/12/24
 
 // varables to store the ceneter of the room ~Weston_1

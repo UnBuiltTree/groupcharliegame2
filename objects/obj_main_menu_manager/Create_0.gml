@@ -5,6 +5,8 @@
 	Added mission_level to keep track of current mission level ~Weston_1
 	Added player_lives to keep track of the players current lives
 	*/
+	
+global.main_menu = true;
 global.mission_level = 0;
 global.player_lives = 5;
 
@@ -48,6 +50,10 @@ create_buttons = function(){
 }
 
 create_buttons();
+
+instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
+instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);
+instance_create_layer(x_center, y_center,"Ground", obj_ground);
 
 //code for main menu music if we get any ~Weston_1
 /*
