@@ -32,6 +32,7 @@ correct_player = function(_projectile_type)
 			lifespan = 16;
 			lifespan_rnd = 2;
 			_explosion_type = 0;
+			audio_play_sound(snd_gun_fire_1, 10, false);
 	        break;
 		case 1:
 			speed = 3;
@@ -48,6 +49,7 @@ correct_player = function(_projectile_type)
 			lifespan = 5;
 			lifespan_rnd = 0;
 			_explosion_type = 2;
+			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
 	    default:
 	        sprite_index = spr_bullet_one;
