@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "parallax",
-    "path": "folders/Objects/Actors/parallax.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Actors/Enemy.yy",
   },
   "parentObjectId": null,
   "persistent": false,
