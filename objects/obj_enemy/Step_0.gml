@@ -1,6 +1,6 @@
 
 if (enemy_health <= 0) {
-    explode(2);
+    explode(explosion_type);
 }
 _damage_cooldown--;
 
