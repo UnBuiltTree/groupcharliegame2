@@ -54,6 +54,9 @@ var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_I
 _player.player_local_id = 0;
 show_debug_message("Player Spawned: " + string(_player.player_local_id));
 
+var _enemy = instance_create_layer(x_center, y_center-(game_height/4),"Aerial_Instances", obj_enemy);
+_enemy.player_local_id = 1;
+
 instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);
 instance_create_layer(x_center, y_center,"Ground", obj_ground);

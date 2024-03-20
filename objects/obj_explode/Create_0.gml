@@ -15,21 +15,25 @@ correct_instance = function(_explosion_type){
 					break;
 			}
 			lifespan = 4;
+			explosion_dmg = 1;
 			audio_play_sound(snd_explode_1, _priority, false);
 	        break;
 		case 1:
 	        sprite_index = spr_explode_two;
 			lifespan = 8;
+			explosion_dmg = 3;
 			audio_play_sound(snd_laser_1, _priority, false);
 	        break;
 		case 2:
 	        sprite_index = spr_explode_three;
 			lifespan = 4;
+			explosion_dmg = 6;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 	    default:
 	        sprite_index = spr_explode_one;
 			lifespan = 6;
+			explosion_dmg = 1;
 	        break;
 	}
 	
