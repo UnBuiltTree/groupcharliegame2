@@ -18,4 +18,7 @@ if (moving_to_target) {
     }
 } else {
 	enemy_move_pattern(enemy_type);
+	if (y > 640){
+		instance_destroy(self)
+	}
 }

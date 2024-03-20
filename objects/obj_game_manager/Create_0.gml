@@ -59,6 +59,7 @@ in arguments with the next available unique ID ~Weston 3/19
 */
 
 enemy_number = 1;
+wave = 0;
 spawn_enemy = function(_x_spawn, _y_spawn, _x_target, _y_target, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
@@ -97,9 +98,49 @@ spawn_enemy = function(_x_spawn, _y_spawn, _x_target, _y_target, _enemy_type){
 	enemy_number++;
 };
 
-spawn_enemy(x_center    , y_center-640, x_center   , y_center-256, 0);
-spawn_enemy(x_center-640, y_center-640, x_center-32, y_center-128, 1);
-spawn_enemy(x_center+640, y_center-640, x_center+32, y_center-128, 1);
+enemy_spawner = function(){
+	if (instance_exists(obj_enemy)){
+		enemies_alive = true
+	} else {	
+		enemies_alive = false
+		switch (wave) {
+		    case 0:
+		        spawn_enemy(x_center    , y_center-384, x_center   , y_center-256, 0);
+				spawn_enemy(x_center-224, y_center-384, x_center-32, y_center-128, 1);
+				spawn_enemy(x_center+224, y_center-384, x_center+32, y_center-128, 1);
+				wave++;
+		        break;
+			case 1:
+				spawn_enemy(x_center-48, y_center-512, x_center-48, y_center-192, 1);
+				spawn_enemy(x_center-16, y_center-512, x_center-16, y_center-192, 1);
+				spawn_enemy(x_center+16, y_center-512, x_center+16, y_center-192, 1);
+				spawn_enemy(x_center+48, y_center-512, x_center+48, y_center-192, 1);
+				spawn_enemy(x_center-48, y_center-448, x_center-48, y_center-128, 1);
+				spawn_enemy(x_center-16, y_center-448, x_center-16, y_center-128, 1);
+				spawn_enemy(x_center+16, y_center-448, x_center+16, y_center-128, 1);
+				spawn_enemy(x_center+48, y_center-448, x_center+48, y_center-128, 1);
+				spawn_enemy(x_center-48, y_center-384, x_center-48, y_center-64, 1);
+				spawn_enemy(x_center-16, y_center-384, x_center-16, y_center-64, 1);
+				spawn_enemy(x_center+16, y_center-384, x_center+16, y_center-64, 1);
+				spawn_enemy(x_center+48, y_center-384, x_center+48, y_center-64, 1);
+				wave++;
+		        break;
+			case 2:
+				spawn_enemy(x_center+64, y_center-384, x_center, y_center-256, 0);
+				spawn_enemy(x_center-64, y_center-448, x_center, y_center-192, 0);
+				spawn_enemy(x_center+64, y_center-512, x_center, y_center-128, 0);
+				spawn_enemy(x_center-64, y_center-576, x_center, y_center-64, 0);
+				wave = 0;
+				break;
+		    default:
+				spawn_enemy(x_center    , y_center-640, x_center   , y_center-256, 0);
+				spawn_enemy(x_center-640, y_center-640, x_center-32, y_center-128, 1);
+				spawn_enemy(x_center+640, y_center-640, x_center+32, y_center-128, 1);
+				wave = 0;
+		        break;
+		}
+	}
+}
 
 instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);

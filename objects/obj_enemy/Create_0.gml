@@ -6,14 +6,14 @@ enemy_initialize = function(_enemy_type){
 	switch (_enemy_type) {
 	    case 0:
 			sprite_index = spr_enemy_type_0;
-	        enemy_health = 3;
+	        enemy_health = 12;
 			enemy_speed = 1;
 			damage_cooldown = 24;
 			explosion_type = 2;
 	        break;
 		case 1:
 			sprite_index = spr_enemy_type_1;
-	        enemy_health = 1;
+	        enemy_health = 3;
 			enemy_speed = 2;
 			damage_cooldown = 12;
 			explosion_type = 2;
