@@ -57,7 +57,9 @@ show_debug_message("Player Spawned: " + string(_player.player_local_id));
 /*this function spawns an enemy at the location and type given 
 in arguments with the next available unique ID ~Weston 3/19
 */
-spawn_enemy = function(_x_spawn, _y_spawn, _enemy_type){
+
+enemy_number = 1;
+spawn_enemy = function(_x_spawn, _y_spawn, _x_target, _y_target, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
     var _enemy;
@@ -86,12 +88,18 @@ spawn_enemy = function(_x_spawn, _y_spawn, _enemy_type){
     //now that a unique ID has been found, spawns the enemy with this ID
     _enemy = instance_create_layer(_x_spawn, _y_spawn, "Aerial_Instances", obj_enemy);
     _enemy.enemy_local_id = _unique_id; //assigns unique ID to the spawned enemy
+	_enemy.target_x = _x_target;
+	_enemy.target_y = _y_target;
+	_enemy._enemy_number = enemy_number;
+	
+	
 	_enemy.enemy_initialize(_enemy_type);
+	enemy_number++;
 };
 
-spawn_enemy(x_center, y_center-128, 0);
-spawn_enemy(x_center+120, y_center-128, 1);
-spawn_enemy(x_center-120, y_center-128, 1);
+spawn_enemy(x_center    , y_center-640, x_center   , y_center-256, 0);
+spawn_enemy(x_center-640, y_center-640, x_center-32, y_center-128, 1);
+spawn_enemy(x_center+640, y_center-640, x_center+32, y_center-128, 1);
 
 instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);

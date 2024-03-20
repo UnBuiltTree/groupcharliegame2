@@ -7,14 +7,14 @@ enemy_initialize = function(_enemy_type){
 	    case 0:
 			sprite_index = spr_enemy_type_0;
 	        enemy_health = 3;
-			enemy_speed = 2;
+			enemy_speed = 1;
 			damage_cooldown = 24;
 			explosion_type = 2;
 	        break;
 		case 1:
 			sprite_index = spr_enemy_type_1;
 	        enemy_health = 1;
-			enemy_speed = 4;
+			enemy_speed = 2;
 			damage_cooldown = 12;
 			explosion_type = 2;
 	        break;
@@ -30,6 +30,9 @@ enemy_initialize = function(_enemy_type){
 	moving_to_target = true;
 	direction = point_direction(x, y, target_x, target_y);
 	speed = enemy_speed;
+	allowed_error = 8;
+	show_debug_message("Enemy ID: " + string(enemy_local_id) + " Target X: " + string(target_x) + " Target Y: " + string(target_y));
+	
 }
 
 pattern_initialize = function(_enemy_type){
