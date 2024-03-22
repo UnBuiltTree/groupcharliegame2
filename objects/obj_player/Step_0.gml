@@ -9,7 +9,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 			//Keyboard movement controls ~Weston_1
 			//checks for W or up key presses
 			if (keyboard_check(ord("W")) || keyboard_check(vk_up)){
-				if (current_y-256-(player_size/2) > (room_height/2)-(game_height/2)){
+				if (current_y-208-(player_size/2) > (room_height/2)-(game_height/2)){
 					vspeed -= vert_speed;
 				}
 			}

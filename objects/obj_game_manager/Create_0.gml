@@ -60,6 +60,7 @@ in arguments with the next available unique ID ~Weston 3/19
 
 enemy_number = 1;
 wave = 0;
+
 spawn_enemy = function(_x_spawn, _y_spawn, _x_target, _y_target, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
@@ -141,6 +142,64 @@ enemy_spawner = function(){
 		}
 	}
 }
+
+spawn_ground_enemy = function(_clm, _row, _enemy_type){
+    var _unique_id = 1; //start checking IDs with 1
+    var _id_found = false;
+    var _enemy;
+	_x_spawn = _clm * 64 + 128
+	_y_spawn = _row * -64
+
+    //loops until an unused ID is found
+    while (!_id_found) {
+        _id_found = true; //assume the ID is unique until proven otherwise
+
+        //loop through all instances of obj_enemy to check if the current ID is in use
+        with (obj_ground_enemy) {
+            if (enemy_local_id == _unique_id) {
+                _id_found = false;
+                break;
+            }
+        }
+
+        if (_id_found) {
+            //found an unused ID, so break out of the loop
+            break;
+        } else {
+            //the ID was in use, so increase the ID number and check again
+            _unique_id += 1;
+        }
+    }
+
+    //now that a unique ID has been found, spawns the enemy with this ID
+    _enemy = instance_create_layer(_x_spawn, _y_spawn, "Ground_Instances", obj_ground_enemy);
+    _enemy.enemy_local_id = _unique_id; //assigns unique ID to the spawned enemy
+	_enemy._enemy_number = enemy_number;
+	
+	_enemy.enemy_initialize(_enemy_type);
+	enemy_number++;
+};
+
+enemy_ground_spawner = function(){
+	spawn_ground_enemy(1, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(5, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 12, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 14, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 16, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 18, "enemy_ground_type_1")
+	spawn_ground_enemy(5, 20, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 22, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 24, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 26, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 28, "enemy_ground_type_1")
+	spawn_ground_enemy(5, 30, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 32, "enemy_ground_type_1")
+}
+
+enemy_ground_spawner();
 
 instance_create_layer(x_center, y_center,"Clouds_1", obj_clouds_1);
 instance_create_layer(x_center, y_center - 256,"Clouds_2", obj_clouds_2);

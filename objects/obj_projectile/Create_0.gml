@@ -32,6 +32,7 @@ correct_player = function(_projectile_type)
 			lifespan = 16;
 			lifespan_rnd = 2;
 			player_projectile = true;
+			player_ground_projectile = false;
 			_explosion_type = "player_small_flak";
 			audio_play_sound(snd_gun_fire_1, 10, false);
 	        break;
@@ -42,15 +43,17 @@ correct_player = function(_projectile_type)
 			lifespan = 24;
 			lifespan_rnd = 1;
 			player_projectile = true;
+			player_ground_projectile = false;
 			_explosion_type = "player_plasma_implosion";
 	        break;
 		case "player_aerial_bomb":
 			speed = 6;
 			spread = 1;
 	        sprite_index = spr_bullet_three;
-			lifespan = 5;
+			lifespan = 4;
 			lifespan_rnd = 0;
 			player_projectile = true;
+			player_ground_projectile = true;
 			_explosion_type = "player_aerial_bomb";
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;

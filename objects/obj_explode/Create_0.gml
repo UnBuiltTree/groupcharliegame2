@@ -17,6 +17,7 @@ correct_instance = function(_explosion_type){
 			lifespan = 4;
 			explosion_dmg = 1;
 			player_explosion = true;
+			ground_explosion = false;
 			audio_play_sound(snd_explode_1, _priority, false);
 	        break;
 		case "player_plasma_implosion":
@@ -24,6 +25,7 @@ correct_instance = function(_explosion_type){
 			lifespan = 8;
 			explosion_dmg = 3;
 			player_explosion = true;
+			ground_explosion = false;
 			audio_play_sound(snd_laser_1, _priority, false);
 	        break;
 		case "player_aerial_bomb":
@@ -31,13 +33,15 @@ correct_instance = function(_explosion_type){
 			lifespan = 4;
 			explosion_dmg = 6;
 			player_explosion = true;
+			ground_explosion = true;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "enemy_death_explode_1":
 	        sprite_index = spr_explode_three;
 			lifespan = 4;
 			explosion_dmg = 0;
-			player_explosion = true;
+			player_explosion = false;
+			ground_explosion = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "enemy_projectile_1_explosion":
@@ -45,12 +49,15 @@ correct_instance = function(_explosion_type){
 			lifespan = 4;
 			explosion_dmg = 4;
 			player_explosion = false;
+			ground_explosion = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 	    default:
 	        sprite_index = spr_explode_one;
 			lifespan = 6;
 			explosion_dmg = 1;
+			player_explosion = true;
+			ground_explosion = false;
 	        break;
 	}
 	
