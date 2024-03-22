@@ -3,7 +3,6 @@
 
 enemy_initialize = function(_enemy_type){
 	enemy_type = _enemy_type;
-	rng_ = irandom_range(0, 50)
 	switch (_enemy_type) {
 	    case "enemy_type_1":
 			sprite_index = spr_enemy_type_0;
@@ -19,8 +18,9 @@ enemy_initialize = function(_enemy_type){
 			enemy_speed = 2;
 			damage_cooldown = 12;
 			shooter_type = true;
-			enemy_fire_rate = 200;
-			enemy_fire_cooldown = 0 + rng_;
+			enemy_fire_rate = 400;
+			rng_ = ((irandom_range(1, 4)*enemy_fire_rate)-enemy_fire_rate)/4
+			enemy_fire_cooldown = rng_;
 			explosion_type = "enemy_death_explode_1";
 	        break;
 	    default:
