@@ -61,7 +61,6 @@ correct_player = function(_projectile_type)
 			lifespan = 12;
 			lifespan_rnd = 3;
 			player_projectile = false;
-			image_yscale = -1;
 			_explosion_type = "enemy_projectile_1_explosion";
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
@@ -69,6 +68,7 @@ correct_player = function(_projectile_type)
 	        sprite_index = spr_bullet_one;
 			lifespan = 10;
 			lifespan_rnd = 1;
+			player_projectile = true;
 			_explosion_type = 0;
 	        break;
 	}
@@ -84,6 +84,7 @@ correct_player = function(_projectile_type)
 	if (player_projectile){
 		direction = 90;
 	} else {
+		image_yscale = -1;
 		direction = 270;
 	}
 	// Sets the angle of the projectile to the direction
