@@ -1,4 +1,6 @@
-explode(_explosion_type);
+if (player_projectile){
+	explode(_explosion_type);
+}
 
 
 

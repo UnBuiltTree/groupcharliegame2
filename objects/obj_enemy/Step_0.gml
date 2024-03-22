@@ -18,6 +18,19 @@ if (moving_to_target) {
     }
 } else {
 	enemy_move_pattern(enemy_type);
+	
+	if (shooter_type){
+		if (enemy_fire_cooldown <= 0)
+			{
+				// Resets the fire cooldown, uses special burt mode for auto cannon
+				enemy_fire_cooldown = enemy_fire_rate;
+				// Creates a projectile
+				create_projectile("player_aerial_bomb");
+			} else {
+				enemy_fire_cooldown--;
+			}
+	}
+	
 	if (y > 640){
 		instance_destroy(self)
 	}
