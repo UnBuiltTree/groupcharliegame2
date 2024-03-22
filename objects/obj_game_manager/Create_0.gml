@@ -105,11 +105,11 @@ enemy_spawner = function(){
 	} else {	
 		enemies_alive = false
 		switch (wave) {
-		    case 2:
+		    case 0:
 		        spawn_enemy(x_center+000, y_center-384, x_center+00, y_center-256, "enemy_type_1");
 				spawn_enemy(x_center-224, y_center-384, x_center-32, y_center-128, "enemy_type_2");
 				spawn_enemy(x_center+224, y_center-384, x_center+32, y_center-128, "enemy_type_2");
-				wave++;
+				wave = 1;
 		        break;
 			case 1:
 				spawn_enemy(x_center-48, y_center-480, x_center-48, y_center-160, "enemy_type_2");
@@ -124,50 +124,52 @@ enemy_spawner = function(){
 				spawn_enemy(x_center-16, y_center-416, x_center-16, y_center-096, "enemy_type_2");
 				spawn_enemy(x_center+16, y_center-416, x_center+16, y_center-096, "enemy_type_2");
 				spawn_enemy(x_center+48, y_center-416, x_center+48, y_center-096, "enemy_type_2");
-				wave++;
+				wave = 2;
 		        break;
-			case 0:
-				spawn_enemy(x_center-16, y_center-480+000, x_center-16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480+000, x_center+16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448+000, x_center-16, y_center-128, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448+000, x_center+16, y_center-128, "enemy_type_2");
-				
-				spawn_enemy(x_center-16, y_center-480-128, x_center-16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480-128, x_center+16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448-128, x_center-16, y_center-128, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448-128, x_center+16, y_center-128, "enemy_type_2");
-				
-				spawn_enemy(x_center-16, y_center-480-256, x_center-16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480-256, x_center+16, y_center-160, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448-256, x_center-16, y_center-128, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448-256, x_center+16, y_center-128, "enemy_type_2");
-				
-				
-				
-				spawn_enemy(x_center-16, y_center-480+000+64, x_center-16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480+000+64, x_center+16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448+000+64, x_center-16, y_center-128+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448+000+64, x_center+16, y_center-128+96, "enemy_type_2");
-				
-				spawn_enemy(x_center-16, y_center-480-128+64, x_center-16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480-128+64, x_center+16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448-128+64, x_center-16, y_center-128+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448-128+64, x_center+16, y_center-128+96, "enemy_type_2");
-				
-				spawn_enemy(x_center-16, y_center-480-256+64, x_center-16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-480-256+64, x_center+16, y_center-160+96, "enemy_type_2");
-				spawn_enemy(x_center-16, y_center-448-256+64, x_center-16, y_center-128+96, "enemy_type_2");
-				spawn_enemy(x_center+16, y_center-448-256+64, x_center+16, y_center-128+96, "enemy_type_2");
-				
-				wave++;
-		        break;
-			case 3:
+			case 2:
 				spawn_enemy(x_center+64, y_center-384, x_center, y_center-256, "enemy_type_1");
 				spawn_enemy(x_center-64, y_center-448, x_center, y_center-192, "enemy_type_1");
 				spawn_enemy(x_center+64, y_center-512, x_center, y_center-128, "enemy_type_1");
 				spawn_enemy(x_center-64, y_center-576, x_center, y_center-064, "enemy_type_1");
-				wave = 0;
+				wave = 3;
 				break;
+			case 3:
+				spawn_enemy(x_center, y_center-360, x_center, y_center, "enemy_type_1");
+				
+				spawn_enemy(x_center-16, y_center-480-128, x_center-16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-128, x_center+16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-128, x_center-16, y_center-128-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-128, x_center+16, y_center-128-64, "enemy_type_2");
+				
+				spawn_enemy(x_center-16, y_center-480-256, x_center-16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-256, x_center+16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-256, x_center-16, y_center-128-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-256, x_center+16, y_center-128-64, "enemy_type_2");
+				
+				spawn_enemy(x_center-16, y_center-480-384, x_center-16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-384, x_center+16, y_center-96-64, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-384, x_center-16, y_center-128-64, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-384, x_center+16, y_center-128-64, "enemy_type_2");
+				
+				
+				
+				spawn_enemy(x_center-16, y_center-480-128+64, x_center-16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-128+64, x_center+16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-128+64, x_center-16, y_center-128, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-128+64, x_center+16, y_center-128, "enemy_type_2");
+				
+				spawn_enemy(x_center-16, y_center-480-256+64, x_center-16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-256+64, x_center+16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-256+64, x_center-16, y_center-128, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-256+64, x_center+16, y_center-128, "enemy_type_2");
+				
+				spawn_enemy(x_center-16, y_center-480-384+64, x_center-16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-480-384+64, x_center+16, y_center-96, "enemy_type_2");
+				spawn_enemy(x_center-16, y_center-448-384+64, x_center-16, y_center-128, "enemy_type_2");
+				spawn_enemy(x_center+16, y_center-448-384+64, x_center+16, y_center-128, "enemy_type_2");
+				
+				wave = 0;
+		        break;
 		    default:
 				spawn_enemy(x_center+000, y_center-640, x_center+00, y_center-256, "enemy_type_1");
 				spawn_enemy(x_center-640, y_center-640, x_center-32, y_center-128, "enemy_type_2");
