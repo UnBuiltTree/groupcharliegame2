@@ -30,6 +30,7 @@
     {"name":"spr_enemy_type_1","order":14,"path":"sprites/spr_enemy_type_1/spr_enemy_type_1.yy",},
     {"name":"spr_clouds_placeholder1","order":4,"path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},
     {"name":"rm_interim_menu","order":2,"path":"rooms/rm_interim_menu/rm_interim_menu.yy",},
+    {"name":"spr_enemy_type_2","order":17,"path":"sprites/spr_enemy_type_2/spr_enemy_type_2.yy",},
     {"name":"snd_laser_1","order":4,"path":"sounds/snd_laser_1/snd_laser_1.yy",},
     {"name":"obj_ground_enemy","order":1,"path":"objects/obj_ground_enemy/obj_ground_enemy.yy",},
     {"name":"spr_bullet_two","order":8,"path":"sprites/spr_bullet_two/spr_bullet_two.yy",},
