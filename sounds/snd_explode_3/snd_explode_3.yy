@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.198118,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Plane Sounds",
+    "path": "folders/Sounds/Plane Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
