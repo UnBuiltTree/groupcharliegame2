@@ -14,5 +14,5 @@ draw_sprite(sprite_index, image_index, x, y);
 
 
 
-
+draw_sprite(spr_bomb_crosshair, 1, x, y - 192);
 

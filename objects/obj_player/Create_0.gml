@@ -20,13 +20,13 @@ player_initialize = function(){
 	
 	player_size = 32;
 	
-	gun_one_fire_rate = 3;
-	gun_two_fire_rate = 12;
+	gun_one_fire_rate = 6;
+	gun_two_fire_rate = 16;
 	gun_three_fire_rate = 24;
 	
-	global.gun_one_cooldown = 0;
-	global.gun_two_cooldown = 0;
-	global.gun_three_cooldown = 0;
+	global.gun_one_cooldown = 10;
+	global.gun_two_cooldown = 10;
+	global.gun_three_cooldown = 10;
 	
 	//variables for player speeds
 	hspeed = 0;
@@ -63,9 +63,10 @@ trigger_pressed = function(_trigger_type)
 	        if (global.gun_one_cooldown <= 0)
 			{
 				// Resets the fire cooldown, uses special burt mode for auto cannon
+				show_debug_message("gun1 fired:" + string(global.gun_one_cooldown))
 				global.gun_one_cooldown = gun_one_fire_rate;
 				// Creates a projectile
-				create_projectile(0);
+				create_projectile("player_machine_gun");
 			}
 	        break;
 		case 1:
@@ -75,7 +76,7 @@ trigger_pressed = function(_trigger_type)
 				// Resets the fire cooldown, uses special burt mode for auto cannon
 				global.gun_two_cooldown = gun_two_fire_rate;
 				// Creates a projectile
-				create_projectile(1);
+				create_projectile("player_aerial_bomb");
 			}
 	        break;
 		case 2:
@@ -85,7 +86,7 @@ trigger_pressed = function(_trigger_type)
 				// Resets the fire cooldown, uses special burt mode for auto cannon
 				global.gun_three_cooldown = gun_three_fire_rate;
 				// Creates a projectile
-				create_projectile(2);
+				create_projectile("player_implosion_plasma_gun");
 			}
 	        break;
 	}

@@ -7,6 +7,7 @@ if(curr_game_state == GAME_STATE.PLAYING){
 	if (time_left > 0){
 		time_left = time_left - 1;
 		gun_cooldown();
+		enemy_spawner();
 	} else {
 		end_of_round();
 		room_goto(rm_interim_menu);
