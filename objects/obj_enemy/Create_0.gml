@@ -17,7 +17,7 @@ enemy_initialize = function(_enemy_type){
 			enemy_spawn_rate = 200;
 			rng_ = ((irandom_range(1, 4)*enemy_spawn_rate)-enemy_spawn_rate)/4
 			enemy_spawn_cooldown = rng_;
-			max_spawns = 12;
+			max_spawns = 3;
 			explosion_type = "enemy_death_explode_1";
 	        break;
 		case "enemy_type_2":

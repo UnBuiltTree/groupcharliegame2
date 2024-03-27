@@ -28,7 +28,7 @@ correct_player = function(_projectile_type)
 	    case "player_machine_gun":
 			speed = 4;
 			spread = 8;
-	        sprite_index = spr_bullet_one;
+	        sprite_index = spr_bullet_1;
 			lifespan = 16;
 			lifespan_rnd = 2;
 			player_projectile = true;
@@ -39,7 +39,7 @@ correct_player = function(_projectile_type)
 		case "player_implosion_plasma_gun":
 			speed = 3;
 			spread = 2;
-	        sprite_index = spr_bullet_two;
+	        sprite_index = spr_bullet_2;
 			lifespan = 24;
 			lifespan_rnd = 1;
 			player_projectile = true;
@@ -49,7 +49,7 @@ correct_player = function(_projectile_type)
 		case "player_aerial_bomb":
 			speed = 6;
 			spread = 1;
-	        sprite_index = spr_bullet_three;
+	        sprite_index = spr_bullet_3;
 			lifespan = 4;
 			lifespan_rnd = 0;
 			player_projectile = true;
@@ -57,10 +57,32 @@ correct_player = function(_projectile_type)
 			_explosion_type = "player_aerial_bomb";
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
+		case "player_airburst":
+			speed = 5;
+			spread = 8;
+	        sprite_index = spr_bullet_3;
+			lifespan = 5;
+			lifespan_rnd = 0.5;
+			player_projectile = true;
+			player_ground_projectile = false;
+			_explosion_type = "player_airburst";
+			audio_play_sound(snd_gun_fire_2, 10, false);
+	        break;
+		case "player_airburst_flak":
+			speed = 6;
+			spread = 80;
+	        sprite_index = spr_bullet_1;
+			lifespan = 3;
+			lifespan_rnd = 1;
+			player_projectile = true;
+			player_ground_projectile = false;
+			_explosion_type = "player_small_flak";
+			//audio_play_sound(snd_gun_fire_2, 10, false);
+	        break;
 		case "enemy_projectile_1":
 			speed = 1.8;
 			spread = 6;
-	        sprite_index = spr_bullet_three;
+	        sprite_index = spr_bullet_3;
 			lifespan = 32;
 			lifespan_rnd = 2;
 			player_projectile = false;
@@ -68,7 +90,7 @@ correct_player = function(_projectile_type)
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
 	    default:
-	        sprite_index = spr_bullet_one;
+	        sprite_index = spr_bullet_1;
 			lifespan = 10;
 			lifespan_rnd = 1;
 			player_projectile = true;
@@ -79,8 +101,8 @@ correct_player = function(_projectile_type)
 	
 	spread_counter = 0;
 	spread_limit = 100;
-	_spread = irandom_range(spread*-1, spread);
-	_lifespan = lifespan + irandom_range(lifespan_rnd*-1, lifespan_rnd);
+	_spread = random_range(spread*-1, spread);
+	_lifespan = lifespan + random_range(lifespan_rnd*-1, lifespan_rnd);
 	alarm[0] = _lifespan * 6
 	
 	// Sets direction of projectile to the players gun angle

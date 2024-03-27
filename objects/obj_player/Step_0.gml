@@ -16,28 +16,28 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 			//Keyboard movement controls ~Weston_1
 			//checks for W or up key presses
 			if (keyboard_check(ord("W")) || keyboard_check(vk_up)){
-				if (current_y-208-(player_size/2) > (room_height/2)-(game_height/2)){
+				if (current_y-208-(player_ysize/2) > (room_height/2)-(game_height/2)){
 					vspeed -= vert_speed;
 				}
 			}
 	
 			//checks for A or left key presses
 			if (keyboard_check(ord("A")) || keyboard_check(vk_left)){
-					if (current_x-(player_size/2) > (room_width/2)-(game_width/2)){
+					if (current_x-(player_xsize/2) > (room_width/2)-(game_width/2)){
 				hspeed -= horz_speed;
 				}
 			}
 	
 			//checks for S or down key presses
 			if (keyboard_check(ord("S")) || keyboard_check(vk_down)){
-				if (current_y+(player_size/2) < (room_height/2)+(game_height/2)){
+				if (current_y+(player_ysize/2) < (room_height/2)+(game_height/2)){
 					vspeed += vert_speed;
 				}
 			}
 			
 			//checks for D or right key presses
 			if (keyboard_check(ord("D")) || keyboard_check(vk_right)){
-				if (current_x+(player_size/2) < (room_width/2)+(game_width/2)){ 
+				if (current_x+(player_xsize/2) < (room_width/2)+(game_width/2)){ 
 					hspeed += horz_speed;
 				}
 			}

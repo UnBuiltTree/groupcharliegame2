@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.229161,
+  "duration": 1.906937,
   "parent": {
     "name": "Plane Sounds",
     "path": "folders/Sounds/Plane Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "snd_gun_fire_2.wav",
+  "soundFile": "snd_gun_fire_2.mp3",
   "type": 0,
-  "volume": 0.1,
+  "volume": 0.5,
 }

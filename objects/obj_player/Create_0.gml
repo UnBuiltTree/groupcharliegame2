@@ -22,7 +22,8 @@ player_initialize = function(){
 	horz_speed = 4;
 	vert_speed = 2;
 	
-	player_size = image_xscale;
+	player_ysize = sprite_get_height(sprite_index);
+	player_xsize = sprite_get_width(sprite_index)
 	
 	gun_one_fire_rate = 6;
 	gun_two_fire_rate = 16;
@@ -48,7 +49,7 @@ create_projectile = function(_projectile_type)
 	
 	// Sets new postions from adjusted positions and players position
 	var _projectile_pos_x = x
-	var _projectile_pos_y = y - player_size/2
+	var _projectile_pos_y = y - player_ysize/2
 
 	// Creates new player projectile from the new positions
 	var _new_projectile = instance_create_layer(_projectile_pos_x, _projectile_pos_y, "Projectiles", obj_projectile);
@@ -90,7 +91,7 @@ trigger_pressed = function(_trigger_type)
 				// Resets the fire cooldown, uses special burt mode for auto cannon
 				global.gun_three_cooldown = gun_three_fire_rate;
 				// Creates a projectile
-				create_projectile("player_implosion_plasma_gun");
+				create_projectile("player_airburst");
 			}
 	        break;
 	}
