@@ -44,6 +44,14 @@ correct_instance = function(_explosion_type){
 			ground_explosion = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
+		case "player_death_explode_1":
+	        sprite_index = spr_explode_three;
+			lifespan = 4;
+			explosion_dmg = 0;
+			player_explosion = true;
+			ground_explosion = false;
+			audio_play_sound(snd_explode_3, _priority, false);
+	        break;
 		case "enemy_projectile_1_explosion":
 	        sprite_index = spr_explode_three;
 			lifespan = 4;

@@ -6,6 +6,13 @@ current_y = y;
 if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 	if (obj_game_manager.curr_game_state == GAME_STATE.PLAYING){
 		if (player_local_id == 0){
+			
+			_damage_cooldown--;
+			
+			if (player_health <= 0){
+				explode(death_explosion)
+			}
+			
 			//Keyboard movement controls ~Weston_1
 			//checks for W or up key presses
 			if (keyboard_check(ord("W")) || keyboard_check(vk_up)){

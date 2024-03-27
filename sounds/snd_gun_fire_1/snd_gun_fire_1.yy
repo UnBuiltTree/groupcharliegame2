@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "snd_gun_fire_1.wav",
   "type": 0,
-  "volume": 0.14,
+  "volume": 0.1,
 }

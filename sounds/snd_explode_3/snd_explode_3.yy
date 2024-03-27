@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "snd_explode_3.wav",
   "type": 0,
-  "volume": 0.15,
+  "volume": 0.1,
 }

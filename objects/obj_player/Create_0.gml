@@ -11,14 +11,18 @@ game_height = obj_game_manager.game_height
 //func to initialize the playter ~Weston_1
 player_initialize = function(){
 	player_local_id = 0;
-	player_health = global.player_lives;
+	player_lives = global.player_lives;
+	player_health = 3;
+	damage_cooldown = 32;
+	_damage_cooldown = 0;
 	
+	death_explosion = "player_death_explode_1";
 	
 	//variable for players move speed
 	horz_speed = 4;
 	vert_speed = 2;
 	
-	player_size = 32;
+	player_size = image_xscale;
 	
 	gun_one_fire_rate = 6;
 	gun_two_fire_rate = 16;
@@ -90,4 +94,16 @@ trigger_pressed = function(_trigger_type)
 			}
 	        break;
 	}
+}
+
+explode = function(_explosion_type){
+	var _explosion_pos_x = x
+	var _explosion_pos_y = y
+
+	// Creates new explosion from the positions
+	var _new_explosion = instance_create_layer(_explosion_pos_x, _explosion_pos_y, "Projectiles", obj_explode);
+	_new_explosion.owner = self;	
+	_new_explosion.correct_instance(_explosion_type);
+	instance_destroy(self)
+	global.player_lives -= 1;
 }
