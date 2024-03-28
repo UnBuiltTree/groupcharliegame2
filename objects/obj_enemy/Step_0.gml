@@ -40,6 +40,7 @@ if (moving_to_target) {
 				if (max_spawns > 0){
 					create_minion(x_center + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 2)*12) , y_center - 128 + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 4)*12), "enemy_type_small_minion");
 					max_spawns--;
+					image_index++;
 				}
 			} else {
 				enemy_spawn_cooldown--;

@@ -9,6 +9,7 @@ enemy_initialize = function(_enemy_type){
 	switch (_enemy_type) {
 	    case "enemy_type_1":
 			sprite_index = spr_enemy_type_0;
+			dmg_sprite = spr_enemy_type_0_dmg;
 	        enemy_health = 12;
 			enemy_speed = 1;
 			damage_cooldown = 24;
@@ -22,6 +23,7 @@ enemy_initialize = function(_enemy_type){
 	        break;
 		case "enemy_type_2":
 			sprite_index = spr_enemy_type_1;
+			dmg_sprite = spr_enemy_type_2_dmg;
 	        enemy_health = 6;
 			enemy_speed = 2;
 			damage_cooldown = 12;
@@ -34,6 +36,7 @@ enemy_initialize = function(_enemy_type){
 	        break;
 		case "enemy_type_small_minion":
 			sprite_index = spr_enemy_type_2;
+			dmg_sprite = spr_enemy_type_2_dmg;
 	        enemy_health = 3;
 			enemy_speed = 2;
 			damage_cooldown = 12;
@@ -45,7 +48,8 @@ enemy_initialize = function(_enemy_type){
 			explosion_type = "enemy_death_explode_1";
 	        break;
 	    default:
-			sprite_index = spr_enemy_type_0;
+			sprite_index = spr_enemy_type_2;
+			dmg_sprite = spr_enemy_type_2_dmg;
 	        enemy_health = 12;
 			enemy_speed = 2;
 			damage_cooldown = 24;

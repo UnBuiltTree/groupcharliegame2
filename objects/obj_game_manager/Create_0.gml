@@ -44,6 +44,9 @@ switch (global.mission_level){
 level_initialize = function(){
 	curr_game_state = GAME_STATE.PLAYING;
 	global.run_tick = false;
+	
+	audio_stop_all();
+	music = audio_play_sound(snd_mission, 100, true);
 }
 
 //initalizes the level  ~Weston_1
@@ -257,9 +260,3 @@ gun_cooldown = function(){
 end_of_round = function(){
 	curr_game_state = GAME_STATE.ENDED;
 }
-
-//code to play music from when we have some ~Weston_1
-/*
-audio_stop_all();
-music = audio_play_sound(snd_music, 100, true);
-*/
