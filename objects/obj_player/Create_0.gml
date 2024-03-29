@@ -110,4 +110,5 @@ explode = function(_explosion_type){
 	_new_explosion.correct_instance(_explosion_type);
 	instance_destroy(self)
 	global.player_life -= 1;
+	global.player_alive = false;
 }

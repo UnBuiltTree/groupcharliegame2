@@ -52,10 +52,15 @@ level_initialize = function(){
 //initalizes the level  ~Weston_1
 level_initialize()
 
-//creates a player within the centre of the room and sets their ID to 0 ~Weston
-var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_Instances", obj_player);
-_player.player_local_id = 0;
-show_debug_message("Player Spawned: " + string(_player.player_local_id));
+spawn_player = function(){
+	//creates a player within the room and sets their ID to 0 ~Weston
+	var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_Instances", obj_player);
+	_player.player_local_id = 0;
+	show_debug_message("Player Spawned: " + string(_player.player_local_id));
+	global.player_alive = true;
+}
+
+spawn_player();
 
 /*this function spawns an enemy at the location and type given 
 in arguments with the next available unique ID ~Weston 3/19
@@ -259,4 +264,11 @@ gun_cooldown = function(){
 
 end_of_round = function(){
 	curr_game_state = GAME_STATE.ENDED;
+	if (global.player_life == 0){
+		//this would be the game over menu, but we dont have
+		//that yet so main_menu is used as a place holder ~weston
+		room_goto(rm_main_menu);
+	} else {
+		room_goto(rm_interim_menu);
+	}
 }

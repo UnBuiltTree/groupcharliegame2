@@ -10,9 +10,21 @@ if(curr_game_state == GAME_STATE.PLAYING){
 		enemy_spawner();
 	} else {
 		end_of_round();
-		room_goto(rm_interim_menu);
 	}
     last_tick = current_time;
 	}
+	
+	if (global.player_alive == false){
+		if (global.player_life >= 1){
+			spawn_player();
+			show_debug_message("player is dead")
+		} else {
+			end_of_round();
+			show_debug_message("game over")
+		}
+		
+	}
+	
+	
 }
 
