@@ -8,7 +8,8 @@
 	
 global.main_menu = true;
 global.mission_level = 0;
-global.player_lives = 5;
+global.player_life_max = 6;
+global.player_life = 6;
 
 
 global.gun_one_cooldown = 0;

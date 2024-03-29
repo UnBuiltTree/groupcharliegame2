@@ -13,8 +13,9 @@ player_initialize = function(){
 	dmg_sprite = spr_player_dmg
 	
 	player_local_id = 0;
-	player_lives = global.player_lives;
-	player_health = 3;
+	player_lives = global.player_life;
+	player_health_max = 6;
+	player_health = 6;
 	damage_cooldown = 32;
 	_damage_cooldown = 0;
 	
@@ -108,5 +109,5 @@ explode = function(_explosion_type){
 	_new_explosion.owner = self;	
 	_new_explosion.correct_instance(_explosion_type);
 	instance_destroy(self)
-	global.player_lives -= 1;
+	global.player_life -= 1;
 }
