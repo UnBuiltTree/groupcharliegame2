@@ -10,6 +10,7 @@ global.main_menu = true;
 global.mission_level = 0;
 global.player_life_max = 6;
 global.player_life = 3;
+global.player_health_max = 6;
 
 global.player_alive = false;
 global.player_spawning = false;

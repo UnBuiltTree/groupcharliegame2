@@ -5,7 +5,7 @@ draw_text((room_width/2)+160+16, 16, string(round(time_left/10)*10));
 
 if(curr_game_state == GAME_STATE.PLAYING){
 	with (obj_player){
-		for (var _i = 0; _i < player_health_max; _i++) {
+		for (var _i = 0; _i < global.player_health_max; _i++) {
 			var _x_pos = 16 + 18 * _i; // Starting x position for the first health bar, then move over for each additional bar. Adjust spacing as needed.
 			var _sprite = spr_hud_health; // Default sprite for the health bar
 			var _state = 0; // Default state for full health
@@ -15,6 +15,18 @@ if(curr_game_state == GAME_STATE.PLAYING){
 				_state = 1;
 			}
     
+			// Draw the health bar sprite
+			draw_sprite_ext(_sprite, _state, _x_pos, 40, 1.0, 1.0, 0, c_white, 1);
+		}
+	}
+	
+	if (!global.player_alive){
+		for (var _i = 0; _i < global.player_health_max; _i++) {
+			var _x_pos = 16 + 18 * _i; // Starting x position for the first health bar, then move over for each additional bar. Adjust spacing as needed.
+			var _sprite = spr_hud_health_blink; // Default sprite for the health bar
+			var _state = _frame; // Default state for full health
+    
+			// Check if the current health bar should be full strength or faded
 			// Draw the health bar sprite
 			draw_sprite_ext(_sprite, _state, _x_pos, 40, 1.0, 1.0, 0, c_white, 1);
 		}

@@ -20,6 +20,10 @@ game_width = 320
 
 spawn_cooldown = 60;
 
+_frame = 0;
+alarm[1] = 15;
+
+
 tick_time = 10; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
 

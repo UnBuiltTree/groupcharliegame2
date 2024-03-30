@@ -14,7 +14,7 @@ player_initialize = function(){
 	
 	player_local_id = 0;
 	player_lives = global.player_life;
-	player_health_max = 6;
+	global.player_health_max = 6;
 	player_health = 6;
 	damage_cooldown = 32;
 	_damage_cooldown = 0;
