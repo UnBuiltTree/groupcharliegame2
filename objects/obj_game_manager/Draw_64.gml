@@ -33,7 +33,7 @@ if(curr_game_state == GAME_STATE.PLAYING){
 	}
 	
 	for (var _i = 0; _i < global.player_life_max; _i++) {
-		var _x_pos = 16 + 34 * _i; // Starting x position for the first health bar, then move over for each additional bar. Adjust spacing as needed.
+		var _x_pos = 16 + 36 * _i; // Starting x position for the first health bar, then move over for each additional bar. Adjust spacing as needed.
 		var _sprite = spr_hud_life; // Default sprite for the health bar
 		var _state = 0; // Default state for full health
 		var _added_y = 0;
@@ -44,8 +44,8 @@ if(curr_game_state == GAME_STATE.PLAYING){
 		}
 		
 		if (3 <= _i) {
-			_added_y = 34;
-			_x_pos = 16 + 34 * (_i - 3)
+			_added_y = 36;
+			_x_pos = 16 + 36 * (_i - 3)
 		}
     
 			// Draw the health bar sprite
