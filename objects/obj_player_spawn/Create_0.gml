@@ -1,4 +1,5 @@
 spawn_initialize = function(){
+	sdw_sprite = spr_player_sdw;
 	_speed = 3;
 	_damage_cooldown = 0;
 	moving_to_target = true;
