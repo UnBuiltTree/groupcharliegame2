@@ -16,7 +16,5 @@ if (_damage_cooldown > 0){
 image_index = _sprite_state
 draw_sprite(sprite_index, image_index, x, y);
 
-
-
 draw_sprite(spr_bomb_crosshair, 1, x, y - 192);
 
