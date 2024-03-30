@@ -12,7 +12,7 @@ global.player_life_max = 6;
 global.player_life = 3;
 
 global.player_alive = false;
-
+global.player_spawning = false;
 
 global.gun_one_cooldown = 0;
 global.gun_two_cooldown = 0;

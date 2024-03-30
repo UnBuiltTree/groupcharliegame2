@@ -18,6 +18,7 @@ enum GAME_STATE
 game_height = 640
 game_width = 320
 
+spawn_cooldown = 60;
 
 tick_time = 10; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
@@ -51,14 +52,37 @@ level_initialize = function(){
 
 //initalizes the level  ~Weston_1
 level_initialize()
-
+/*
 spawn_player = function(){
 	//creates a player within the room and sets their ID to 0 ~Weston
 	var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_Instances", obj_player);
 	_player.player_local_id = 0;
 	show_debug_message("Player Spawned: " + string(_player.player_local_id));
 	global.player_alive = true;
+}*/
+
+
+spawn_player = function(){
+	if (global.player_spawning == false){
+		global.player_spawning = true;
+		//creates a player within the room and sets their ID to 0 ~Weston
+		var _player_spawn = instance_create_layer(x_center, y_center+(game_height/2)+64,"Aerial_Instances", obj_player_spawn);
+		_player_spawn.target_x = x_center;
+		_player_spawn.target_y = y_center+(game_height/4);
+		_player_spawn.spawn_initialize();
+		show_debug_message("Player Spawn");
+	}
 }
+
+spawn_true_player = function(){
+	//creates a player within the room and sets their ID to 0 ~Weston
+	var _player = instance_create_layer(x_center, y_center+(game_height/4),"Aerial_Instances", obj_player);
+	_player.player_local_id = 0;
+	show_debug_message("Player Spawned: " + string(_player.player_local_id));
+	global.player_spawning = false;
+	global.player_alive = true;
+}
+
 
 spawn_player();
 

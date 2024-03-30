@@ -14,9 +14,13 @@ if(curr_game_state == GAME_STATE.PLAYING){
     last_tick = current_time;
 	}
 	
+	spawn_cooldown--;
 	if (global.player_alive == false){
 		if (global.player_life >= 1){
-			spawn_player();
+			if (spawn_cooldown >= 0){
+				spawn_player();
+			}
+			spawn_cooldown = 60;
 			show_debug_message("player is dead")
 		} else {
 			end_of_round();
