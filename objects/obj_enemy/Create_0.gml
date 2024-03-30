@@ -23,7 +23,7 @@ enemy_initialize = function(_enemy_type){
 	        break;
 		case "enemy_type_2":
 			sprite_index = spr_enemy_type_1;
-			dmg_sprite = spr_enemy_type_2_dmg;
+			dmg_sprite = spr_enemy_type_1_dmg;
 	        enemy_health = 6;
 			enemy_speed = 2;
 			damage_cooldown = 12;
