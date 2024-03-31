@@ -26,6 +26,7 @@ global.run_tick = false;
 x_center = room_width / 2
 y_center = room_height / 2
 
+instance_create_layer(x, y, "Aerial_shadows", obj_game_shadow_manager);
 
 // Set the base dimensions for your game
 var base_width = 640;

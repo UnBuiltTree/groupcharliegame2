@@ -23,6 +23,9 @@ spawn_cooldown = 60;
 _frame = 0;
 alarm[1] = 15;
 
+//creates the obj_game_shadow_manager, the shadow manager that draws all player and enemy shadows on the ground.
+instance_create_layer(x, y, "Aerial_shadows", obj_game_shadow_manager);
+
 
 tick_time = 10; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
