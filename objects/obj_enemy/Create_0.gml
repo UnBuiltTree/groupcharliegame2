@@ -223,7 +223,8 @@ create_minion = function(_x_target, _y_target, _enemy_type){
 
 
 explode = function(_explosion_type){
-	var _explosion_pos_x = x
+	
+	var _explosion_pos_x = x 
 	var _explosion_pos_y = y
 
 	// Creates new explosion from the positions

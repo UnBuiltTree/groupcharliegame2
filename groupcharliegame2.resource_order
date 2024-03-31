@@ -66,6 +66,7 @@
     {"name":"spr_explode_2","order":12,"path":"sprites/spr_explode_2/spr_explode_2.yy",},
     {"name":"spr_explode_3","order":11,"path":"sprites/spr_explode_3/spr_explode_3.yy",},
     {"name":"spr_ground_enemy","order":15,"path":"sprites/spr_ground_enemy/spr_ground_enemy.yy",},
+    {"name":"spr_ground_enemy_ship_1","order":31,"path":"sprites/spr_ground_enemy_ship_1/spr_ground_enemy_ship_1.yy",},
     {"name":"spr_ground_placeholder","order":6,"path":"sprites/spr_ground_placeholder/spr_ground_placeholder.yy",},
     {"name":"spr_hud_background","order":2,"path":"sprites/spr_hud_background/spr_hud_background.yy",},
     {"name":"spr_hud_health_blink","order":23,"path":"sprites/spr_hud_health_blink/spr_hud_health_blink.yy",},

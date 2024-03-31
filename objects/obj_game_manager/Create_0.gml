@@ -223,7 +223,7 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
     var _enemy;
-	_x_spawn = _clm * 64 + 128
+	_x_spawn = _clm * 64 + 96
 	_y_spawn = _row * -64
 
     //loops until an unused ID is found
@@ -264,7 +264,7 @@ enemy_ground_spawner = function(){
 	spawn_ground_enemy(5, 10, "enemy_ground_type_1")
 	spawn_ground_enemy(1, 12, "enemy_ground_type_1")
 	spawn_ground_enemy(4, 14, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 16, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 16, "enemy_ground_ship_1")
 	spawn_ground_enemy(4, 18, "enemy_ground_type_1")
 	spawn_ground_enemy(5, 20, "enemy_ground_type_1")
 	spawn_ground_enemy(2, 22, "enemy_ground_type_1")
@@ -272,7 +272,11 @@ enemy_ground_spawner = function(){
 	spawn_ground_enemy(1, 26, "enemy_ground_type_1")
 	spawn_ground_enemy(2, 28, "enemy_ground_type_1")
 	spawn_ground_enemy(5, 30, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 32, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 33, "enemy_ground_ship_1")
+	spawn_ground_enemy(3, 34, "enemy_ground_ship_1")
+	spawn_ground_enemy(5, 35, "enemy_ground_ship_1")
+	spawn_ground_enemy(2, 35, "enemy_ground_ship_1")
+	spawn_ground_enemy(1, 36, "enemy_ground_ship_1")
 }
 
 enemy_ground_spawner();
