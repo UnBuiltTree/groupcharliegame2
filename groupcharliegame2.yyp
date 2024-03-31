@@ -76,6 +76,8 @@
     {"id":{"name":"spr_bullet_1","path":"sprites/spr_bullet_1/spr_bullet_1.yy",},},
     {"id":{"name":"spr_bullet_2","path":"sprites/spr_bullet_2/spr_bullet_2.yy",},},
     {"id":{"name":"spr_bullet_3","path":"sprites/spr_bullet_3/spr_bullet_3.yy",},},
+    {"id":{"name":"spr_bullet_4","path":"sprites/spr_bullet_4/spr_bullet_4.yy",},},
+    {"id":{"name":"spr_bullet_5","path":"sprites/spr_bullet_5/spr_bullet_5.yy",},},
     {"id":{"name":"spr_clouds_placeholder1","path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},},
     {"id":{"name":"spr_clouds_placeholder2","path":"sprites/spr_clouds_placeholder2/spr_clouds_placeholder2.yy",},},
     {"id":{"name":"spr_enemy_type_0_dmg","path":"sprites/spr_enemy_type_0_dmg/spr_enemy_type_0_dmg.yy",},},

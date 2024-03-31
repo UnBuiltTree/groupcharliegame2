@@ -49,6 +49,8 @@
     {"name":"spr_bullet_1","order":7,"path":"sprites/spr_bullet_1/spr_bullet_1.yy",},
     {"name":"spr_bullet_2","order":8,"path":"sprites/spr_bullet_2/spr_bullet_2.yy",},
     {"name":"spr_bullet_3","order":9,"path":"sprites/spr_bullet_3/spr_bullet_3.yy",},
+    {"name":"spr_bullet_4","order":29,"path":"sprites/spr_bullet_4/spr_bullet_4.yy",},
+    {"name":"spr_bullet_5","order":30,"path":"sprites/spr_bullet_5/spr_bullet_5.yy",},
     {"name":"spr_clouds_placeholder1","order":4,"path":"sprites/spr_clouds_placeholder1/spr_clouds_placeholder1.yy",},
     {"name":"spr_clouds_placeholder2","order":5,"path":"sprites/spr_clouds_placeholder2/spr_clouds_placeholder2.yy",},
     {"name":"spr_enemy_type_0_dmg","order":19,"path":"sprites/spr_enemy_type_0_dmg/spr_enemy_type_0_dmg.yy",},
