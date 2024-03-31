@@ -101,7 +101,7 @@ correct_instance = function(_explosion_type){
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "enemy_projectile_1_explosion":
-	        sprite_index = spr_explode_2;
+	        sprite_index = spr_explode_1;
 			lifespan = 4;
 			explosion_dmg = 1;
 			player_explosion = false;
