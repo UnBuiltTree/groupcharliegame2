@@ -69,19 +69,47 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 							global.debug_mode = false
 							global.cheat_mode = false
 						}
-					_button_cooldown = 20;
+					_button_cooldown = button_cooldown;
 					}
 				}
-			if (keyboard_check(ord("K")))
-				{	
-					if (_button_cooldown <= 0){
-						if (global.debug_mode){
-							global.destroy_all = true;
-							alarm[10] = 3;
+			// --- debuging tools
+			if (global.debug_mode)
+				{
+				if (keyboard_check(ord("K")))
+					{	
+						if (_button_cooldown <= 0){
+								global.destroy_all = true;
+								alarm[10] = 3;
+						_button_cooldown = button_cooldown;
 						}
-					_button_cooldown = 20;
+					}
+					
+				// hide_clouds toggle
+				if (keyboard_check(ord("J")))
+					{	
+						if (_button_cooldown <= 0){
+								if (!global.hide_clouds){
+									global.hide_clouds = true
+								} else {
+									global.hide_clouds = false
+								}
+						_button_cooldown = button_cooldown;
+						}
+					}
+				// hide_shadows
+				if (keyboard_check(ord("H")))
+					{	
+						if (_button_cooldown <= 0){
+								if (!global.hide_shadows){
+									global.hide_shadows = true
+								} else {
+									global.hide_shadows = false
+								}
+						_button_cooldown = button_cooldown;
+						}
 					}
 				}
+				
 			if (keyboard_check(ord("I")))
 				{
 					if (_button_cooldown <= 0){
@@ -90,7 +118,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 						} else {
 							global.cheat_mode = false
 						}
-					_button_cooldown = 20;
+					_button_cooldown = button_cooldown;
 					}
 				}
 		}

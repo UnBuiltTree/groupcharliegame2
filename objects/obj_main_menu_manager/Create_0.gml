@@ -9,6 +9,8 @@
 global.main_menu = true;
 global.debug_mode = false;
 global.cheat_mode = false;
+global.hide_clouds = false;
+global.hide_shadows = false;
 global.destroy_all = false;
 
 global.mission_level = 0;

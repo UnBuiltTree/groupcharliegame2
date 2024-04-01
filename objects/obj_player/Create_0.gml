@@ -21,6 +21,7 @@ player_initialize = function(){
 	damage_cooldown = 64;
 	_damage_cooldown = 0;
 	_button_cooldown = 0;
+	button_cooldown = 10;
 	
 	death_explosion = "player_death_explode_1";
 	
