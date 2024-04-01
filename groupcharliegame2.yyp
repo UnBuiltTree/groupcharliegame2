@@ -93,6 +93,8 @@
     {"id":{"name":"spr_enemy_type_zepplin_1_turr1","path":"sprites/spr_enemy_type_zepplin_1_turr1/spr_enemy_type_zepplin_1_turr1.yy",},},
     {"id":{"name":"spr_enemy_type_zepplin_1_turr2","path":"sprites/spr_enemy_type_zepplin_1_turr2/spr_enemy_type_zepplin_1_turr2.yy",},},
     {"id":{"name":"spr_enemy_type_zepplin_1","path":"sprites/spr_enemy_type_zepplin_1/spr_enemy_type_zepplin_1.yy",},},
+    {"id":{"name":"spr_enemy_type_zepplin_2","path":"sprites/spr_enemy_type_zepplin_2/spr_enemy_type_zepplin_2.yy",},},
+    {"id":{"name":"spr_enemy_type_zepplin_2_dmg","path":"sprites/spr_enemy_type_zepplin_2_dmg/spr_enemy_type_zepplin_2_dmg.yy",},},
     {"id":{"name":"spr_explode_1","path":"sprites/spr_explode_1/spr_explode_1.yy",},},
     {"id":{"name":"spr_explode_2","path":"sprites/spr_explode_2/spr_explode_2.yy",},},
     {"id":{"name":"spr_explode_3","path":"sprites/spr_explode_3/spr_explode_3.yy",},},

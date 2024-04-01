@@ -77,6 +77,34 @@ enemy_initialize = function(_enemy_type){
 			spawn_type = "enemy_type_small_minion";
 			explosion_type = "enemy_death_explode_1";
 	        break;
+		case "enemy_type_zepplin_2":
+			sprite_index = spr_enemy_type_zepplin_2;
+			dmg_sprite = spr_enemy_type_zepplin_2_dmg;
+			sdw_sprite = spr_enemy_type_zepplin_2;
+	        enemy_health = 64;
+			enemy_speed = 0.5;
+			damage_cooldown = 24;
+			shooter_type = false;
+			turret_type = true;
+			turret_num = 2;
+			turrets = [
+			    { _name : "zep_tur_1", turret_sprite : spr_enemy_type_zepplin_1_turr1, xoffset: 26, yoffset: -10, _direction: -90, projectile_direction: 0, turret_fire_cooldown: 15, turret_fire_rate: 100, },
+			    { _name : "zep_tur_2", turret_sprite : spr_enemy_type_zepplin_1_turr2, xoffset: 26, yoffset: 26, _direction: -90, projectile_direction: 0, turret_fire_cooldown: 0, turret_fire_rate: 60, },
+				{ _name : "zep_tur_3", turret_sprite : spr_enemy_type_zepplin_1_turr1, xoffset: -26, yoffset: -10, _direction: -90, projectile_direction: 0, turret_fire_cooldown: 25, turret_fire_rate: 100, },
+			    { _name : "zep_tur_4", turret_sprite : spr_enemy_type_zepplin_1_turr2, xoffset: -26, yoffset: 26, _direction: -90, projectile_direction: 0, turret_fire_cooldown: 5, turret_fire_rate: 60, },
+			];
+			enemy_fire_rate = 20;
+			spawner_type = true;
+			spawn_visable_spr = true;
+			enemy_spawn_rate = 20;
+			rng_spawn = ((irandom_range(1, 4)*enemy_spawn_rate)-enemy_spawn_rate)/4
+			rng_fire = ((irandom_range(1, 4)*enemy_fire_rate)-enemy_fire_rate)/4
+			enemy_spawn_cooldown = rng_spawn;
+			enemy_fire_cooldown = rng_fire;
+			max_spawns = 8;
+			spawn_type = "enemy_type_small_minion";
+			explosion_type = "enemy_death_explode_1";
+	        break;
 	    default:
 			sprite_index = spr_enemy_type_2;
 			dmg_sprite = spr_enemy_type_2_dmg;
@@ -182,6 +210,12 @@ create_projectile = function(_shooter_type, _xoffset, _yoffset, _direction)
 		case "zep_tur_2":
 			_projectile_type = "enemy_projectile_slow_1";
 			break;
+		case "zep_tur_3":
+			_projectile_type = "enemy_projectile_1";
+			break;
+		case "zep_tur_4":
+			_projectile_type = "enemy_projectile_slow_1";
+			break;
 		default:
 			_projectile_type = "enemy_projectile_1";
 			break;
@@ -203,6 +237,28 @@ turret_manager = function(_enemy_type) {
 
     switch (_enemy_type) {
         case "enemy_type_zepplin_1":
+            // Loop through each turret in the turrets array
+            for (var i = 0; i < array_length(turrets); i++) {
+                var turret = turrets[i]; // Access the current turret
+                // Update direction for each turret
+                turret._direction = point_direction(x + turret.xoffset, y + turret.yoffset, target_x, target_y);
+                turret.projectile_direction = turret._direction;
+                
+                // Check and update the fire cooldown
+                if (turret.turret_fire_cooldown <= 0) {
+                    // Reset the fire cooldown
+                    turret.turret_fire_cooldown = turret.turret_fire_rate;
+                    // Fire a projectile
+                    create_projectile(turret._name, turret.xoffset, turret.yoffset, turret._direction);
+                } else {
+                    turret.turret_fire_cooldown--;
+                }
+
+                // Important: update the turret in the array with its new state
+                turrets[i] = turret;
+            }
+            break;
+		case "enemy_type_zepplin_2":
             // Loop through each turret in the turrets array
             for (var i = 0; i < array_length(turrets); i++) {
                 var turret = turrets[i]; // Access the current turret

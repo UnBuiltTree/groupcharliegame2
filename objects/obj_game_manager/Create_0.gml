@@ -211,6 +211,10 @@ enemy_spawner = function(){
 		        break;
 			case 4:
 		        spawn_enemy(x_center+000, y_center-384, x_center+00, y_center-(256/2), "enemy_type_zepplin_1");
+				wave = 5;
+		        break;
+			case 5:
+		        spawn_enemy(x_center+000, y_center-384, x_center+00, y_center-(256/2), "enemy_type_zepplin_2");
 				wave = 0;
 		        break;
 		    default:

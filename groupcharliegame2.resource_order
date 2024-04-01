@@ -66,6 +66,8 @@
     {"name":"spr_enemy_type_zepplin_1_turr1","order":37,"path":"sprites/spr_enemy_type_zepplin_1_turr1/spr_enemy_type_zepplin_1_turr1.yy",},
     {"name":"spr_enemy_type_zepplin_1_turr2","order":38,"path":"sprites/spr_enemy_type_zepplin_1_turr2/spr_enemy_type_zepplin_1_turr2.yy",},
     {"name":"spr_enemy_type_zepplin_1","order":35,"path":"sprites/spr_enemy_type_zepplin_1/spr_enemy_type_zepplin_1.yy",},
+    {"name":"spr_enemy_type_zepplin_2","order":39,"path":"sprites/spr_enemy_type_zepplin_2/spr_enemy_type_zepplin_2.yy",},
+    {"name":"spr_enemy_type_zepplin_2_dmg","order":40,"path":"sprites/spr_enemy_type_zepplin_2_dmg/spr_enemy_type_zepplin_2_dmg.yy",},
     {"name":"spr_explode_1","order":10,"path":"sprites/spr_explode_1/spr_explode_1.yy",},
     {"name":"spr_explode_2","order":12,"path":"sprites/spr_explode_2/spr_explode_2.yy",},
     {"name":"spr_explode_3","order":11,"path":"sprites/spr_explode_3/spr_explode_3.yy",},
