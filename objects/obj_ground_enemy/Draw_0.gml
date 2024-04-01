@@ -8,3 +8,7 @@ image_index = _sprite_state
 
 draw_sprite(sprite_index, image_index, x, y);
 
+if (turret_type){
+	draw_sprite_ext(turret_sprite, image_index, x + tur_xoffset, y + tur_yoffset, 1, 1, (round(tur_direction/15)*15) + 90,c_white, 1);
+}
+

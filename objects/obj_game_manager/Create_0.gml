@@ -257,10 +257,10 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
 };
 
 enemy_ground_spawner = function(){
-	spawn_ground_enemy(1, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 10, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 10, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(2, 10, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(3, 10, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 10, "enemy_ground_AA_tower_1")
 	spawn_ground_enemy(5, 10, "enemy_ground_type_1")
 	spawn_ground_enemy(1, 12, "enemy_ground_type_1")
 	spawn_ground_enemy(4, 14, "enemy_ground_type_1")
