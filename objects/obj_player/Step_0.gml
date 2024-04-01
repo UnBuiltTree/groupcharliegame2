@@ -8,6 +8,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 		if (player_local_id == 0){
 			
 			_damage_cooldown--;
+			_button_cooldown--;
 			
 			if (player_health <= 0){
 				explode(death_explosion)
@@ -57,6 +58,30 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 				{
 					var _trigger_type = 2;
 					trigger_pressed(_trigger_type);
+				}
+			if (keyboard_check(ord("B")))
+				{
+					if (_button_cooldown <= 0){
+						if (!global.debug_mode){
+							global.debug_mode = true
+							global.cheat_mode = true
+						} else {
+							global.debug_mode = false
+							global.cheat_mode = false
+						}
+					_button_cooldown = 20;
+					}
+				}
+			if (keyboard_check(ord("I")))
+				{
+					if (_button_cooldown <= 0){
+						if (!global.cheat_mode){
+							global.cheat_mode = true
+						} else {
+							global.cheat_mode = false
+						}
+					_button_cooldown = 20;
+					}
 				}
 		}
 	}

@@ -7,6 +7,8 @@
 	*/
 	
 global.main_menu = true;
+global.debug_mode = false;
+global.cheat_mode = false;
 global.mission_level = 0;
 global.player_life_max = 6;
 global.player_life = 3;

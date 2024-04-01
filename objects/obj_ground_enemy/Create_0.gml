@@ -1,4 +1,5 @@
 enemy_initialize = function(_enemy_type){
+	destoryed = false;
 	enemy_type = _enemy_type;
 	rng_ = irandom_range(0, 50)
 	ground_speed = 1;
@@ -65,8 +66,10 @@ enemy_initialize = function(_enemy_type){
 }
 
 turret_track = function(_enemy_type){
-	target_x = obj_player.x
-	target_y = obj_player.y
+	if (instance_exists(obj_player)){
+		target_x = obj_player.x
+		target_y = obj_player.y
+	}
 	switch (_enemy_type){
 		case "enemy_ground_AA_tower_1":
 			tur_direction = point_direction(x + tur_xoffset, y + tur_yoffset, target_x, target_y);
@@ -133,5 +136,5 @@ explode = function(_explosion_type){
 	var _new_explosion = instance_create_layer(_explosion_pos_x, _explosion_pos_y, "Ground_Instances", obj_explode);
 	_new_explosion.owner = self;	
 	_new_explosion.correct_instance(_explosion_type);
-	instance_destroy(self)
+	destoryed = true;
 }

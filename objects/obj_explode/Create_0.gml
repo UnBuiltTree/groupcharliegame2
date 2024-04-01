@@ -74,8 +74,8 @@ correct_instance = function(_explosion_type){
 			audio_play_sound(snd_explode_1, _priority, false);
 	        break;
 		case "player_aerial_bomb":
-	        sprite_index = spr_explode_2;
-			lifespan = 4;
+	        sprite_index = spr_explode_3;
+			lifespan = 6;
 			explosion_dmg = 6;
 			player_explosion = true;
 			ground_explosion = true;
@@ -117,6 +117,10 @@ correct_instance = function(_explosion_type){
 			ground_explosion = false;
 			projectile_spawner = false;
 	        break;
+	}
+	
+	if (ground_explosion){
+		vspeed = 1;
 	}
 	
 	alarm[0] = lifespan * 6

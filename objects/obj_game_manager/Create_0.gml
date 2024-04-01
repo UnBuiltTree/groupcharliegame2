@@ -223,9 +223,9 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
     var _enemy;
-	_x_spawn = _clm * 64 + 96
-	_y_spawn = _row * -64
-
+	_x_spawn = (_clm+1) * 64 + 32
+	_y_spawn = (_row-6) * -64
+	loop = 40;
     //loops until an unused ID is found
     while (!_id_found) {
         _id_found = true; //assume the ID is unique until proven otherwise
@@ -257,26 +257,55 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
 };
 
 enemy_ground_spawner = function(){
-	spawn_ground_enemy(1, 10, "enemy_ground_AA_tower_1")
-	spawn_ground_enemy(2, 10, "enemy_ground_AA_tower_1")
-	spawn_ground_enemy(3, 10, "enemy_ground_AA_tower_1")
-	spawn_ground_enemy(4, 10, "enemy_ground_AA_tower_1")
-	spawn_ground_enemy(5, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(1, 12, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 14, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 16, "enemy_ground_ship_1")
-	spawn_ground_enemy(4, 18, "enemy_ground_type_1")
-	spawn_ground_enemy(5, 20, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 22, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 24, "enemy_ground_type_1")
-	spawn_ground_enemy(1, 26, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 28, "enemy_ground_type_1")
-	spawn_ground_enemy(5, 30, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 33, "enemy_ground_ship_1")
-	spawn_ground_enemy(3, 34, "enemy_ground_ship_1")
-	spawn_ground_enemy(5, 35, "enemy_ground_ship_1")
-	spawn_ground_enemy(2, 35, "enemy_ground_ship_1")
-	spawn_ground_enemy(1, 36, "enemy_ground_ship_1")
+	// the current mission last 3 map loops.
+	spawn_ground_enemy(5, 8, "enemy_ground_type_1")
+	// -- the 'wall' near the start of the level
+	spawn_ground_enemy(1, 15, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 15, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(3, 15, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 15, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(5, 15, "enemy_ground_type_1")
+	
+	// --- the 1st ships
+	spawn_ground_enemy(3, 22, "enemy_ground_ship_1")
+	spawn_ground_enemy(2, 25, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30, "enemy_ground_type_1")
+	
+	spawn_ground_enemy(2, 40, "enemy_ground_ship_1")
+	spawn_ground_enemy(4, 40, "enemy_ground_ship_1")
+	spawn_ground_enemy(5, 1 + loop, "enemy_ground_ship_1")
+	spawn_ground_enemy(3, 2 + loop, "enemy_ground_ship_1")
+	spawn_ground_enemy(1, 2 + loop, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27 + loop, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28 + loop, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29 + loop, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30 + loop, "enemy_ground_type_1")
+	
+	spawn_ground_enemy(5, 8 + loop*2, "enemy_ground_type_1")
+	
+	// -- the 'wall'
+	spawn_ground_enemy(1, 15 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 15 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(3, 15 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 15 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(5, 15 + loop*2, "enemy_ground_type_1")
+	
+	// --- the 1st ships
+	spawn_ground_enemy(3, 22 + loop*2, "enemy_ground_ship_1")
+	spawn_ground_enemy(2, 25 + loop*2, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30 + loop*2, "enemy_ground_type_1")
 }
 
 enemy_ground_spawner();

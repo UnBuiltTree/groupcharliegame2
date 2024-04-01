@@ -12,6 +12,7 @@ game_height = obj_game_manager.game_height
 player_initialize = function(){
 	dmg_sprite = spr_player_dmg;
 	sdw_sprite = spr_player_sdw;
+	cheat_sprite = spr_player_cheat;
 	
 	player_local_id = 0;
 	player_lives = global.player_life;
@@ -19,6 +20,7 @@ player_initialize = function(){
 	player_health = 6;
 	damage_cooldown = 64;
 	_damage_cooldown = 0;
+	_button_cooldown = 0;
 	
 	death_explosion = "player_death_explode_1";
 	

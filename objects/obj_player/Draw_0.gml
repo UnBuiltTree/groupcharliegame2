@@ -16,6 +16,10 @@ if (_damage_cooldown > 0){
 	draw_sprite_ext(dmg_sprite, image_index, x, y, 1, 1, 0, c_white, 1);
 }
 
+if (global.cheat_mode){
+	draw_sprite_ext(cheat_sprite, image_index, x, y, 1, 1, 0, c_white, 1);
+}
+
 image_index = _sprite_state
 draw_sprite(sprite_index, image_index, x, y);
 
