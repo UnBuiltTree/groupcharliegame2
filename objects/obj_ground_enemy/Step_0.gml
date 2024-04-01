@@ -1,3 +1,4 @@
+
 if(!destoryed){
 	if (enemy_health <= 0) {
 	    explode(explosion_type);
@@ -5,6 +6,9 @@ if(!destoryed){
 	_damage_cooldown--;
 
 	if (y > 0){
+		if (global.destroy_all){
+			instance_destroy(self)
+		}
 		if (shooter_type){
 			if (turret_type){
 				turret_track(enemy_type);

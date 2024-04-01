@@ -72,6 +72,16 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 					_button_cooldown = 20;
 					}
 				}
+			if (keyboard_check(ord("K")))
+				{	
+					if (_button_cooldown <= 0){
+						if (global.debug_mode){
+							global.destroy_all = true;
+							alarm[10] = 3;
+						}
+					_button_cooldown = 20;
+					}
+				}
 			if (keyboard_check(ord("I")))
 				{
 					if (_button_cooldown <= 0){

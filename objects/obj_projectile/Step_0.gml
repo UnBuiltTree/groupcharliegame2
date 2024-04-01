@@ -1,3 +1,7 @@
+if (global.destroy_all){
+	instance_destroy(self)
+}
+
 direction = direction + _spread;
 
 

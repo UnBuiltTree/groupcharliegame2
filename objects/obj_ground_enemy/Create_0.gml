@@ -107,7 +107,7 @@ create_projectile = function(_enemy_type, _direction)
 			}
 			break;
 		case "enemy_ground_AA_tower_1":
-			_projectile_type = "enemy_projectile_1";
+			_projectile_type = "enemy_projectile_slow_1";
 			_x_offset = 0
 			break;
 		default:

@@ -1,0 +1,1 @@
+global.destroy_all = false;

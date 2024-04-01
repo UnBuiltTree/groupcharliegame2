@@ -91,6 +91,16 @@ correct_player = function(_projectile_type)
 			_explosion_type = "enemy_projectile_1_explosion";
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
+		case "enemy_projectile_slow_1":
+			speed = 1.2;
+			spread = 8;
+	        sprite_index = spr_bullet_4;
+			lifespan = 64;
+			lifespan_rnd = 2;
+			player_projectile = false;
+			_explosion_type = "enemy_projectile_1_explosion";
+			audio_play_sound(snd_gun_fire_2, 10, false);
+	        break;
 	    default:
 	        sprite_index = spr_bullet_1;
 			lifespan = 10;

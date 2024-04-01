@@ -1,3 +1,6 @@
+if (global.destroy_all){
+	instance_destroy(self)
+}
 
 if (enemy_health <= 0) {
     explode(explosion_type);
@@ -18,14 +21,16 @@ if (moving_to_target) {
     }
 } else {
 	enemy_move_pattern(enemy_type);
-	
+	if (turret_type){
+				turret_manager(enemy_type);
+			}
 	if (shooter_type){
 		if (enemy_fire_cooldown <= 0)
 			{
 				// Resets the fire cooldown, uses special burt mode for auto cannon
 				enemy_fire_cooldown = enemy_fire_rate;
 				// Creates a projectile
-				create_projectile("player_aerial_bomb");
+				create_projectile(enemy_type, 0, 0, 270);
 			} else {
 				enemy_fire_cooldown--;
 			}
@@ -38,9 +43,11 @@ if (moving_to_target) {
 				enemy_spawn_cooldown = enemy_spawn_rate;
 				// Creates a projectile
 				if (max_spawns > 0){
-					create_minion(x_center + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 2)*12) , y_center - 128 + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 4)*12), "enemy_type_small_minion");
+					create_minion(x_center + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 2)*12) , y_center - 128 + ((irandom_range(0, 1)*2)-1)*(irandom_range(0, 4)*12), spawn_type);
 					max_spawns--;
+					if (spawn_visable_spr){
 					image_index++;
+					};
 				}
 			} else {
 				enemy_spawn_cooldown--;
