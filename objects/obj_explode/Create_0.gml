@@ -11,6 +11,19 @@ create_projectile = function(_projectile_type)
 	_new_projectile.correct_player(_projectile_type);
 }
 
+child_projectile_spawner = function(_projectile_type, _explsn_hit_sprite, _explsn_eol_sprite){
+	if (_hit == false){
+		sprite_index = _explsn_eol_sprite;
+		audio_play_sound(snd_explode_airburst, _priority, false);
+		for (var i = 0; i < projectile_num; ++i) {
+				create_projectile(_projectile_type)
+		}
+	} else {
+		sprite_index = _explsn_hit_sprite;
+		audio_play_sound(snd_explode_1, _priority, false);
+		}
+}
+
 correct_instance = function(_explosion_type){
 	_priority = irandom_range(20, 30);
 	switch (_explosion_type) {
@@ -29,6 +42,7 @@ correct_instance = function(_explosion_type){
 			explosion_dmg = 1;
 			player_explosion = true;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_1, _priority, false);
 	        break;
 		case "player_plasma_implosion":
@@ -37,32 +51,35 @@ correct_instance = function(_explosion_type){
 			explosion_dmg = 3;
 			player_explosion = true;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_laser_1, _priority, false);
-		case "player_airburst":
-	        sprite_index = spr_explode_2;
+		case "player_airburst_explosion":
+			_explsn_hit_sprite = spr_explode_1;
+			_explsn_eol_sprite = spr_explode_2;
 			lifespan = 6;
 			explosion_dmg = 1;
 			player_explosion = true;
 			ground_explosion = false;
-			audio_play_sound(snd_explode_airburst, _priority, false);
-			create_projectile("player_airburst_flak")
-			create_projectile("player_airburst_flak")
-			create_projectile("player_airburst_flak")
-			create_projectile("player_airburst_flak")
+			projectile_spawner = true;
+			projectile_num = 6;
+			child_projectile_spawner("player_airburst_flak", _explsn_hit_sprite, _explsn_eol_sprite);
+			
 		case "player_airburst_flak":
-	        sprite_index = spr_explode_1;
+	        sprite_index = spr_explode_2;
 			lifespan = 4;
 			explosion_dmg = 1;
 			player_explosion = true;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_1, _priority, false);
 	        break;
 		case "player_aerial_bomb":
-	        sprite_index = spr_explode_2;
-			lifespan = 4;
+	        sprite_index = spr_explode_3;
+			lifespan = 6;
 			explosion_dmg = 6;
 			player_explosion = true;
 			ground_explosion = true;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "enemy_death_explode_1":
@@ -71,6 +88,7 @@ correct_instance = function(_explosion_type){
 			explosion_dmg = 0;
 			player_explosion = false;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "player_death_explode_1":
@@ -79,14 +97,16 @@ correct_instance = function(_explosion_type){
 			explosion_dmg = 0;
 			player_explosion = true;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 		case "enemy_projectile_1_explosion":
-	        sprite_index = spr_explode_2;
+	        sprite_index = spr_explode_1;
 			lifespan = 4;
 			explosion_dmg = 1;
 			player_explosion = false;
 			ground_explosion = false;
+			projectile_spawner = false;
 			audio_play_sound(snd_explode_3, _priority, false);
 	        break;
 	    default:
@@ -95,8 +115,14 @@ correct_instance = function(_explosion_type){
 			explosion_dmg = 1;
 			player_explosion = true;
 			ground_explosion = false;
+			projectile_spawner = false;
 	        break;
+	}
+	
+	if (ground_explosion){
+		vspeed = 1;
 	}
 	
 	alarm[0] = lifespan * 6
 }
+

@@ -11,6 +11,8 @@ _spread = 0;
 lifespan = 1;
 _explosion_type = 1;
 
+_hit = false;
+
 
 correct_player = function(_projectile_type)
 {
@@ -28,7 +30,7 @@ correct_player = function(_projectile_type)
 	    case "player_machine_gun":
 			speed = 4;
 			spread = 8;
-	        sprite_index = spr_bullet_1;
+	        sprite_index = spr_bullet_4;
 			lifespan = 16;
 			lifespan_rnd = 2;
 			player_projectile = true;
@@ -36,7 +38,7 @@ correct_player = function(_projectile_type)
 			_explosion_type = "player_small_flak";
 			audio_play_sound(snd_gun_fire_1, 10, false);
 	        break;
-		case "player_implosion_plasma_gun":
+		case "player_gun_2":
 			speed = 3;
 			spread = 2;
 	        sprite_index = spr_bullet_2;
@@ -49,7 +51,7 @@ correct_player = function(_projectile_type)
 		case "player_aerial_bomb":
 			speed = 6;
 			spread = 1;
-	        sprite_index = spr_bullet_3;
+	        sprite_index = spr_bullet_5;
 			lifespan = 4;
 			lifespan_rnd = 0;
 			player_projectile = true;
@@ -61,11 +63,11 @@ correct_player = function(_projectile_type)
 			speed = 5;
 			spread = 8;
 	        sprite_index = spr_bullet_3;
-			lifespan = 5;
+			lifespan = 6;
 			lifespan_rnd = 0.5;
 			player_projectile = true;
 			player_ground_projectile = false;
-			_explosion_type = "player_airburst";
+			_explosion_type = "player_airburst_explosion";
 			audio_play_sound(snd_gun_fire_2, 10, false);
 	        break;
 		case "player_airburst_flak":
@@ -82,8 +84,18 @@ correct_player = function(_projectile_type)
 		case "enemy_projectile_1":
 			speed = 1.8;
 			spread = 6;
-	        sprite_index = spr_bullet_3;
+	        sprite_index = spr_bullet_2;
 			lifespan = 32;
+			lifespan_rnd = 2;
+			player_projectile = false;
+			_explosion_type = "enemy_projectile_1_explosion";
+			audio_play_sound(snd_gun_fire_2, 10, false);
+	        break;
+		case "enemy_projectile_slow_1":
+			speed = 1.2;
+			spread = 8;
+	        sprite_index = spr_bullet_4;
+			lifespan = 64;
 			lifespan_rnd = 2;
 			player_projectile = false;
 			_explosion_type = "enemy_projectile_1_explosion";
@@ -109,7 +121,6 @@ correct_player = function(_projectile_type)
 	if (player_projectile){
 		direction = 90;
 	} else {
-		image_yscale = -1;
 		direction = 270;
 	}
 	// Sets the angle of the projectile to the direction
@@ -121,10 +132,10 @@ explode = function(_explosion_type){
 
 	var _explosion_pos_x = x
 	var _explosion_pos_y = y
-
 	// Creates new explosion from the positions
 	var _new_explosion = instance_create_layer(_explosion_pos_x, _explosion_pos_y, "Projectiles", obj_explode);
 	_new_explosion.owner = self;	
+	_new_explosion._hit = _hit;
 	_new_explosion.correct_instance(_explosion_type);
 	instance_destroy(self)
 }

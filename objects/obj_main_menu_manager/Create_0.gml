@@ -7,9 +7,16 @@
 	*/
 	
 global.main_menu = true;
+global.debug_mode = false;
+global.cheat_mode = false;
+global.hide_clouds = false;
+global.hide_shadows = false;
+global.destroy_all = false;
+
 global.mission_level = 0;
 global.player_life_max = 6;
 global.player_life = 3;
+global.player_health_max = 6;
 
 global.player_alive = false;
 global.player_spawning = false;
@@ -25,6 +32,7 @@ global.run_tick = false;
 x_center = room_width / 2
 y_center = room_height / 2
 
+instance_create_layer(x, y, "Aerial_shadows", obj_game_shadow_manager);
 
 // Set the base dimensions for your game
 var base_width = 640;

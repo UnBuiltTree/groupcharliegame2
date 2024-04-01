@@ -10,14 +10,18 @@ game_height = obj_game_manager.game_height
 
 //func to initialize the playter ~Weston_1
 player_initialize = function(){
-	dmg_sprite = spr_player_dmg
+	dmg_sprite = spr_player_dmg;
+	sdw_sprite = spr_player_sdw;
+	cheat_sprite = spr_player_cheat;
 	
 	player_local_id = 0;
 	player_lives = global.player_life;
-	player_health_max = 6;
+	global.player_health_max = 6;
 	player_health = 6;
-	damage_cooldown = 32;
+	damage_cooldown = 64;
 	_damage_cooldown = 0;
+	_button_cooldown = 0;
+	button_cooldown = 10;
 	
 	death_explosion = "player_death_explode_1";
 	

@@ -20,6 +20,13 @@ game_width = 320
 
 spawn_cooldown = 60;
 
+_frame = 0;
+alarm[1] = 15;
+
+//creates the obj_game_shadow_manager, the shadow manager that draws all player and enemy shadows on the ground.
+instance_create_layer(x, y, "Aerial_shadows", obj_game_shadow_manager);
+
+
 tick_time = 10; // Time in milliseconds for each game tick
 last_tick = current_time; // Store the current time
 
@@ -200,6 +207,14 @@ enemy_spawner = function(){
 				spawn_enemy(x_center-16, y_center-448-384+64, x_center-16, y_center-128, "enemy_type_2");
 				spawn_enemy(x_center+16, y_center-448-384+64, x_center+16, y_center-128, "enemy_type_2");
 				
+				wave = 4;
+		        break;
+			case 4:
+		        spawn_enemy(x_center+000, y_center-384, x_center+00, y_center-(256/2), "enemy_type_zepplin_1");
+				wave = 5;
+		        break;
+			case 5:
+		        spawn_enemy(x_center+000, y_center-384, x_center+00, y_center-(256/2), "enemy_type_zepplin_2");
 				wave = 0;
 		        break;
 		    default:
@@ -216,9 +231,9 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
     var _unique_id = 1; //start checking IDs with 1
     var _id_found = false;
     var _enemy;
-	_x_spawn = _clm * 64 + 128
-	_y_spawn = _row * -64
-
+	_x_spawn = (_clm+1) * 64 + 32
+	_y_spawn = (_row-6) * -64
+	loop = 40;
     //loops until an unused ID is found
     while (!_id_found) {
         _id_found = true; //assume the ID is unique until proven otherwise
@@ -250,22 +265,55 @@ spawn_ground_enemy = function(_clm, _row, _enemy_type){
 };
 
 enemy_ground_spawner = function(){
-	spawn_ground_enemy(1, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(5, 10, "enemy_ground_type_1")
-	spawn_ground_enemy(1, 12, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 14, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 16, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 18, "enemy_ground_type_1")
-	spawn_ground_enemy(5, 20, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 22, "enemy_ground_type_1")
-	spawn_ground_enemy(4, 24, "enemy_ground_type_1")
-	spawn_ground_enemy(1, 26, "enemy_ground_type_1")
-	spawn_ground_enemy(2, 28, "enemy_ground_type_1")
-	spawn_ground_enemy(5, 30, "enemy_ground_type_1")
-	spawn_ground_enemy(3, 32, "enemy_ground_type_1")
+	// the current mission last 3 map loops.
+	spawn_ground_enemy(5, 8, "enemy_ground_type_1")
+	// -- the 'wall' near the start of the level
+	spawn_ground_enemy(1, 15, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 15, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(3, 15, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 15, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(5, 15, "enemy_ground_type_1")
+	
+	// --- the 1st ships
+	spawn_ground_enemy(3, 22, "enemy_ground_ship_1")
+	spawn_ground_enemy(2, 25, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30, "enemy_ground_type_1")
+	
+	spawn_ground_enemy(2, 40, "enemy_ground_ship_1")
+	spawn_ground_enemy(4, 40, "enemy_ground_ship_1")
+	spawn_ground_enemy(5, 1 + loop, "enemy_ground_ship_1")
+	spawn_ground_enemy(3, 2 + loop, "enemy_ground_ship_1")
+	spawn_ground_enemy(1, 2 + loop, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27 + loop, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28 + loop, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29 + loop, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30 + loop, "enemy_ground_type_1")
+	
+	spawn_ground_enemy(5, 8 + loop*2, "enemy_ground_type_1")
+	
+	// -- the 'wall'
+	spawn_ground_enemy(1, 15 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(2, 15 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(3, 15 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(4, 15 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(5, 15 + loop*2, "enemy_ground_type_1")
+	
+	// --- the 1st ships
+	spawn_ground_enemy(3, 22 + loop*2, "enemy_ground_ship_1")
+	spawn_ground_enemy(2, 25 + loop*2, "enemy_ground_ship_1")
+	
+	// ---
+	spawn_ground_enemy(5, 27 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(3, 28 + loop*2, "enemy_ground_AA_tower_1")
+	spawn_ground_enemy(4, 29 + loop*2, "enemy_ground_type_1")
+	spawn_ground_enemy(1, 30 + loop*2, "enemy_ground_type_1")
 }
 
 enemy_ground_spawner();
