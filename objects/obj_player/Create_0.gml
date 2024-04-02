@@ -40,6 +40,8 @@ player_initialize = function(){
 	global.gun_two_cooldown = 10;
 	global.gun_three_cooldown = 10;
 	
+	curret_main_gun = 0;
+	
 	//variables for player speeds
 	hspeed = 0;
 	vspeed = 0;

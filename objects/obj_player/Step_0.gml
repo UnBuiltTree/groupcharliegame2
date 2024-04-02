@@ -46,7 +46,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 			//trigger controls
 			if (keyboard_check(vk_space) || mouse_check_button(mb_left))
 				{
-					var _trigger_type = 0;
+					var _trigger_type = curret_main_gun;
 					trigger_pressed(_trigger_type);
 				}
 			if (keyboard_check(vk_shift) || mouse_check_button(mb_right))
@@ -56,9 +56,19 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 				}
 			if (keyboard_check(ord("E")))
 				{
-					var _trigger_type = 2;
-					trigger_pressed(_trigger_type);
+					if (_button_cooldown <= 0){
+						switch (curret_main_gun) {
+						    case 0:
+						        curret_main_gun = 2;
+						        break;
+							case 2:
+						        curret_main_gun = 0;
+						        break;
+						}
+					}
+					_button_cooldown = button_cooldown;
 				}
+
 			if (keyboard_check(ord("B")))
 				{
 					if (_button_cooldown <= 0){
@@ -79,7 +89,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 					{	
 						if (_button_cooldown <= 0){
 								global.destroy_all = true;
-								alarm[10] = 3;
+								alarm[10] = 2;
 						_button_cooldown = button_cooldown;
 						}
 					}
