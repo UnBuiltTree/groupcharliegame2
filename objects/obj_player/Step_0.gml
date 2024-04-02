@@ -79,7 +79,7 @@ if (obj_game_manager.curr_game_state != GAME_STATE.PAUSED){
 					{	
 						if (_button_cooldown <= 0){
 								global.destroy_all = true;
-								alarm[10] = 3;
+								alarm[10] = 2;
 						_button_cooldown = button_cooldown;
 						}
 					}
